@@ -1,0 +1,162 @@
+//flex display
+
+$display-lists: (block, none, inline-block, inline, flex, inline-flex);
+
+@each $breakpoints, $value in $breakpoints {
+  @if ($value == $media-xs) {
+    @each $display-list in $display-lists {
+      .d-#{$display-list} {
+        display: $display-list;
+      }
+    }
+  } @else {
+    @include mq($value) {
+      @each $display-list in $display-lists {
+        .d-#{$breakpoints}-#{$display-list} {
+          display: $display-list;
+        }
+      }
+    }
+  }
+}
+
+// flex direction
+$direction-lists: (row, row-reverse, column, column-reverse);
+
+@each $breakpoints, $value in $breakpoints {
+  @if ($value == $screen-xs) {
+    @each $direction-list in $direction-lists {
+      .flex-#{$direction-list} {
+        flex-direction: $direction-list;
+      }
+    }
+  } @else {
+    @include mq($value) {
+      @each $direction-list in $direction-lists {
+        .flex-#{$breakpoints}-#{$direction-list} {
+          flex-direction: $direction-list;
+        }
+      }
+    }
+  }
+}
+
+// flex wrap
+$wrap-lists: (nowrap, wrap, wrap-reverse);
+
+@each $breakpoints, $value in $breakpoints {
+  @if ($value == $screen-xs) {
+    @each $wrap-list in $wrap-lists {
+      .flex-#{$wrap-list} {
+        flex-wrap: $wrap-list;
+      }
+    }
+  } @else {
+    @include mq($value) {
+      @each $wrap-list in $wrap-lists {
+        .flex-#{$breakpoints}-#{$wrap-list} {
+          flex-wrap: $wrap-list;
+        }
+      }
+    }
+  }
+}
+
+// flex justify
+$justify-lists: (flex-start, flex-end, center, space-between, space-around, space-evenly, start, end, left, right);
+
+@each $breakpoints, $value in $breakpoints {
+  @if ($value == $screen-xs) {
+    @each $justify-list in $justify-lists {
+      .justify-#{$justify-list} {
+        justify-content: $justify-list;
+      }
+    }
+  } @else {
+    @include mq($value) {
+      @each $justify-list in $justify-lists {
+        .justify-#{$breakpoints}-#{$justify-list} {
+          justify-content: $justify-list;
+        }
+      }
+    }
+  }
+}
+
+// flex align item
+$align-item-lists: (stretch, flex-start, flex-end, center, baseline, start, end, self-start, self-end);
+
+@each $breakpoints, $value in $breakpoints {
+  @if ($value == $screen-xs) {
+    @each $align-list in $align-item-lists {
+      .align-item-#{$align-list} {
+        align-items: $align-list;
+      }
+    }
+  } @else {
+    @include mq($value) {
+      @each $align-list in $align-item-lists {
+        .align-item-#{$breakpoints}-#{$align-list} {
+          align-items: $align-list;
+        }
+      }
+    }
+  }
+}
+
+// flex align content
+$align-content-lists: (flex-start,flex-end,center,space-between,space-around,space-evenly,stretch);
+
+@each $breakpoints, $value in $breakpoints {
+  @if ($value == $screen-xs) {
+    @each $align-list in $align-content-lists {
+      .align-content-#{$align-list} {
+        align-items: $align-list;
+      }
+    }
+  } @else {
+    @include mq($value) {
+      @each $align-list in $align-content-lists {
+        .align-content-#{$breakpoints}-#{$align-list} {
+          align-items: $align-list;
+        }
+      }
+    }
+  }
+}
+
+
+/// Atomic styles for text - Born
+$font-weights-lists: (400, 500, 600, 700, 800, "bold");
+$font-size-start: 10;
+$font-size-end: 40;
+$font-size-responsive: (14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34);
+
+//Font Weight
+@each $font-weights-list in $font-weights-lists {
+  .fontWeight-#{$font-weights-list} {
+    font-weight: $font-weights-list;
+  }
+}
+
+//Font Size
+@for $font-size from $font-size-start through $font-size-end {
+  @if $font-size % 2 == 0 {
+    .fontSize-#{$font-size} {
+      font-size: #{$font-size}px;
+    }
+  }  
+}
+
+// Font Size - Responsive
+@each $breakpoints, $value in $breakpoints {
+  @each $font-size-breakpoint, $font-size in $font-size-responsive {
+    @if ($breakpoints == $font-size-breakpoint) {
+      @include mq($value) {
+        .fontSize-#{$breakpoints}-#{$font-size} {
+          font-size: #{$font-size}px;
+        }
+      }
+    }
+  }
+}

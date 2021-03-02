@@ -1,0 +1,8 @@
+//  Usage: @include font-face('Nunito Sans', 12px, bold, null)
+
+@mixin font-face($name, $size, $weight, $style) {
+    font-family: $name;    
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+}

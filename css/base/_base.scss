@@ -1,0 +1,83 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+*{
+  box-sizing: border-box;
+}
+a {
+  color: color(primary);
+  position: relative;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app {
+  overflow-x: hidden;
+}
+
+#viewport {
+  overflow-x: hidden;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media only screen and (min-width: 992px) {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border: 0px none #fff;
+    border-radius: 65px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f4f4f4;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #aaa;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border: 0px none #fff;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #f4f4f4;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #f4f4f4;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+// Dropdown arrow
+.list__arrow{     
+  transition: all 0.7s;
+  &.active{
+    transform: rotate(-180deg);
+  }
+}
+
+// Overlay
+.overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: rgba(0,0,0,.6);
+  left: 0;
+}

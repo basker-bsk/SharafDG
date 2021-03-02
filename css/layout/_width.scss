@@ -1,0 +1,37 @@
+// IMPORTANT: Add new css rules ON DEMAND only when you need them!
+// Try to use multiples of 5 when using pixels
+
+// .w0 .w10 - example classes for px Width
+// Pixels
+$width-px: 0 2 4 5 6 8 10 12 15 16 20 24 30 36 40 45 50 55 60 65 70 75 80 140 170 250 ;
+
+// Percents
+$width-x-p: 10;
+
+// Generators
+@mixin width {
+  @each $breakpoint, $value in $breakpoints {
+    // Only for mobile (XS)
+    @if ($value == $media-xs) {
+      @each $i in $width-px {
+        .w#{$i} {
+          width: #{$i}px;
+        }
+      }      
+    } 
+    // For [sm, md, lg]
+    @else {
+      @include mq($value) {
+        @each $i in $width-px {
+          .w-#{$breakpoint}-#{$i} {
+            width: #{$i}px;
+          }
+        }
+       
+      }
+    }
+  }
+  
+}
+
+@include width;
