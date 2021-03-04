@@ -127,7 +127,7 @@ $align-content-lists: (flex-start,flex-end,center,space-between,space-around,spa
 
 
 /// Atomic styles for text - Born
-$font-weights-lists: (400, 500, 600, 700, 800, "bold");
+$font-weights-lists: (200, 300, 400, 600, 700, 800, 900, "bold");
 $font-size-start: 10;
 $font-size-end: 40;
 $font-size-responsive: (14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34);
@@ -160,3 +160,25 @@ $font-size-responsive: (14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34);
     }
   }
 }
+
+// flex order
+$order-lists: (0, 1, 2, 3, 4, 5);
+@each $breakpoints, $value in $breakpoints {
+  @if ($value == $screen-xs) {
+    @each $order-list in $order-lists {
+      .order-#{$order-list} {
+        order: $order-list;
+      }
+    }
+  } @else {
+    @include mq($value) {
+      @each $order-list in $order-lists {
+        .order-#{$breakpoints}-#{$order-list} {
+          order: $order-list;
+        }
+      }
+    }
+  }
+}
+
+

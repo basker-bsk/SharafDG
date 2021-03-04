@@ -1,45 +1,14 @@
 <template>
   <div id="home">
-    <MasterBanner class="mb-xs-30" />
-    <FlashDeals   class=" my-xs-50"/>
-    <PromotionalBlock  class=" my-xs-50" />
+    <MasterBanner class="mb-xs-100" />
+    <PromotionalBlock  class=" my-xs-50" />  
     <USPBlock class=" my-xs-50"/>
+    <FlashDeals   class=" my-xs-50"/>      
     <ImageDiscover class=" my-xs-50"/>
-    <!--StillBanner  class=" my-xs-50" /-->
+    <StillBanner  class=" my-xs-50" />
+    <SocialInfluencer class="my-xs-50" />
     <DiscoverSharafDG   class=" my-xs-50"/>
     
-    <!--
-    <head-image />
-    <promoted-offers />
-
-    <section class="new-collection container px15">
-      <div>
-        <header class="col-md-12">
-          <h2 class="align-center cl-accent">
-            {{ $t('Everything new') }}
-          </h2>
-        </header>
-      </div>
-      <div class="row center-xs">
-        <lazy-hydrate :trigger-hydration="!loading" v-if="isLazyHydrateEnabled">
-          <product-listing columns="4" :products="getEverythingNewCollection" />
-        </lazy-hydrate>
-        <product-listing v-else columns="4" :products="getEverythingNewCollection" />
-      </div>
-    </section>
-
-    <section v-if="isOnline" class="container pb60 px15">
-      <div class="row center-xs">
-        <header class="col-md-12" :class="{ pt40: getEverythingNewCollection && getEverythingNewCollection.length }">
-          <h2 class="align-center cl-accent">
-            {{ $t('Get inspired') }}
-          </h2>
-        </header>
-      </div>
-      <tile-links />
-    </section>
-    <Onboard />
-    -->
   </div>
 </template>
 
@@ -60,14 +29,16 @@ import { mapGetters } from 'vuex'
 import config from 'config'
 import { registerModule } from '@vue-storefront/core/lib/modules'
 import { RecentlyViewedModule } from '@vue-storefront/core/modules/recently-viewed'
-import MasterBanner from 'theme/components/theme/blocks/Home/MasterBanner'
-import PromotionalBlock from 'theme/components/theme/blocks/Home/PromotionalBlock'
+
 
 //Static Components
+import MasterBanner from 'theme/components/theme/blocks/Home/MasterBanner'
+import PromotionalBlock from 'theme/components/theme/blocks/Home/PromotionalBlock'
 import ImageDiscover from 'theme/components/theme/blocks/ImageDiscover/ImageDiscover'
 import StillBanner from 'theme/components/theme/blocks/StillBanner/StillBanner'
 import USPBlock from 'theme/components/theme/blocks/Home/USPBlock'
 import FlashDeals from 'theme/components/theme/blocks/Home/FlashDeals'
+import SocialInfluencer from 'theme/components/theme/blocks/Home/SocialInfluencer/SocialInfluencer'
 import DiscoverSharafDG from 'theme/components/theme/blocks/Home/DiscoverSharafDG'
 export default {
   data () {
@@ -88,7 +59,8 @@ export default {
     StillBanner,
     USPBlock,
     FlashDeals,
-    DiscoverSharafDG
+    DiscoverSharafDG,
+    SocialInfluencer
   },
   computed: {
     ...mapGetters('user', ['isLoggedIn']),

@@ -75,13 +75,13 @@
           <a class="fb-ic mr-3" role="button"><mdb-icon fab icon="facebook-f" size="lg" /></a>
           <a class="tw-ic mr-3" role="button"><mdb-icon fab icon="twitter" size="lg" /></a>
           <a class="gplus-ic mr-3" role="button"><mdb-icon fab icon="google-plus-g" size="lg" /></a>
-        </div>
-        <button
-         class="button-outline create-account full-button brdr-none w-100 primary-outline px40"
+        </div>      
+        <button-full 
+         class="button-outline create-account full-button brdr-none w-100 px40"
          @click.prevent="switchElem"
          data-testid="registerLink">
           {{ $t('CREATE ACCOUNT') }}
-        </button>
+        </button-full>
       </form>
     </div>
   </div>
@@ -93,6 +93,7 @@ import Login from '@vue-storefront/core/compatibility/components/blocks/Auth/Log
 import ButtonFull from 'theme/components/theme/ButtonFull.vue'
 import BaseCheckbox from '../Form/BaseCheckbox.vue'
 import BaseInput from '../Form/BaseInput.vue'
+
 import { required, email } from 'vuelidate/lib/validators'
 
 export default {
@@ -232,8 +233,10 @@ $darkblue: color(sdg-darkblue);
     font-size: 20px;
   }
   .modal-content {
-    margin-right: 50px;
-    margin-left: 50px;
+    @media (min-width: 600px) {
+      margin-right: 50px;
+      margin-left: 50px;
+    }
   }
   .forgot-password {
     font-size: 14px;
@@ -265,7 +268,6 @@ $darkblue: color(sdg-darkblue);
     background-color: color(transparent);
     padding-top: 7px;
     padding-bottom: 7px;
-    height: 30px;
     font-size: 10px;
     text-transform: uppercase;
     font-weight: bold;

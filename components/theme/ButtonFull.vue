@@ -35,7 +35,7 @@ export default {
     },
     color: {
       type: String,
-      required: true
+      required: false
     },
     link: {
       type: Object,
@@ -60,14 +60,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- @import "~theme/css/variables/colors";
-@import "~theme/css/helpers/functions/color";
+@import '~theme/css/helpers/functions/color';
+@import '~theme/css/variables/variables';
+ 
   .disabled {
     background-color: gray
   }
   .full-button {    
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
     height: 30px;
     font-size: 11px;
     border-radius: 4px;

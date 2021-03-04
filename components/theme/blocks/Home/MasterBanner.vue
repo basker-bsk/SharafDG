@@ -79,11 +79,11 @@
 <script>
 
 import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import Icon from 'theme/components/custom/Global/Icon'
 import ButtonFull from 'theme/components/theme/ButtonFull'
 
-export default {
+export default { 
   name: 'MasterBanner',
   components: {    
     VueSlickCarousel,
@@ -127,47 +127,50 @@ export default {
 img{
   max-width: 100%;
 }
-
-.banner-content{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
-  margin: 0 auto;
-  justify-content: center;
-  flex-direction: column;
-  display: flex;
-  z-index: 2;
-  @include media(md-up) {
-    bottom: 40px;
+.slick-master {
+  width: 100%;
+  position: relative;
+  .slick-dots li button:before{
+    display: none;
   }
-}
-
-
-.banner-content-text {
-  padding-bottom: 2%;
-  width: 300px;
-  @include media(md-up) {
-    padding-bottom: 9%;
-    width: 412px;
-  }
-  h5 {
-    font-size: 10px;
-    font-weight: bold;
-    color: color(white);
+  .banner-content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    z-index: 2;
     @include media(md-up) {
-      font-size: 12px;
+      bottom: 40px;
     }
   }
-  h2 {
-    font-size: 28px;
-    font-weight: 300;
-    color: color(white);
-     @include media(md-up) {
-      font-size: 42px;
+  .banner-content-text {
+    padding-bottom: 2%;
+    width: 300px;
+    @include media(md-up) {
+      padding-bottom: 9%;
+      width: 412px;
+    }
+    h5 {
+      font-size: 10px;
+      font-weight: bold;
+      color: color(white);
+      @include media(md-up) {
+        font-size: 12px;
+      }
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 300;
+      color: color(white);
+      @include media(md-up) {
+        font-size: 42px;
+      }
     }
   }
-}
 
 .banner-content-link {  
   display: flex;
@@ -196,11 +199,6 @@ img{
 }
 
 
-.slick-master {
-  width: 100%;
-  position: relative;
-  margin: 0 auto;
-}
 
 .slick-prev {
   left: calc(100vw - 1020px);
@@ -303,14 +301,11 @@ img{
   animation-timing-function: ease-in-out;
 }
 
-  .slick-master:hover .slick-dots li.slick-active button div {
-    -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
-    animation-play-state: paused;
-  }
 
 .pause-animation {
   -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
   animation-play-state: paused;
+}
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
@@ -336,4 +331,12 @@ img{
     width: 125%;
   }
 }
+
+
+
+  .slick-master:hover  .slick-dots li.slick-active button div {
+    -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+    animation-play-state: paused;
+  }
+
 </style>

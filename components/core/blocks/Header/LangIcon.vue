@@ -66,6 +66,11 @@ export default {
         top: 102px;
     }
 }
+@include media(xs-down){
+    .language_container + .overlay{
+        display: none;
+    }
+}
 @include media(md-up){
     .language_container + .overlay{
         top: 118px;
@@ -78,18 +83,22 @@ export default {
 }
 
 .language_wrapper{
-    top:41px;
     z-index: 3;
     width: 300px;
     display: none;
-    color: color(black);
-    top: 65px;
-     left: 50%;
-      transform: translateX(-50%);
+    color: color(black);    
+    left: 50%;
+    transform: translateX(-50%);
     box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.19); 
     -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.19);
     -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.19);
     border-radius: 5px;
+    @include media(sm-up){
+      top: 65px;
+    }
+    @include media(xs-down){
+      bottom: 42px;
+    }
 }
 .language_active {
     .language_wrapper{ 

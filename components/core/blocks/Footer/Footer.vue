@@ -12,7 +12,7 @@
                       </div>
                   </div>
                   <div class="col-lg-6 col-xs-12">
-                      <ul class="d-xs-flex between-md m0">
+                      <ul class="d-md-flex between-md m0">
                         <li class="flex footer-help mb-xs-20 mb-md-0">
                           <div class="mr15 flex align-item-center">
                             <Icon icon-id="pin" class="level1-icon test" />
@@ -136,7 +136,7 @@
                 </h5>
                 <ul class="menu-links">
                     <li>
-                    <form v-if="!isCheckoutPage">
+                    <form v-if="!isCheckoutPage" class="pb-xs-20">
                     <base-input                      
                       type="email"
                       name="email"
@@ -189,7 +189,7 @@
                       </div>
                   </div>
                   <div class="col-md-7 col-xs-12">
-                      <ul class="d-xs-flex between-md m0">
+                      <ul class="d-md-flex between-md m0">
                         <li class="flex middle-md footer-help pr-md-45">                          
                           <div>
                             <h3>Sell at Sharaf DG</h3>

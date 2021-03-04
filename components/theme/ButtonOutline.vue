@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~theme/css/variables/colors";
 @import "~theme/css/helpers/functions/color";
 $dark-border: color(secondary);
@@ -54,8 +54,8 @@ $darkblue: color(sdg-darkblue);
 .button-outline {
   border: 1px solid;
   background-color: color(transparent);
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 9.5px;
+  padding-bottom: 9.5px;
   height: 30px;
   font-size: 7px;
   text-transform: uppercase;

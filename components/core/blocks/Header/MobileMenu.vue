@@ -54,7 +54,9 @@
         </div>
         <div class="logout_country_container bg-cl-white  brdr-top-1 brdr-cl-secondary w-100">
             <div class="d-xs-flex justify-space-around w-100 align-item-center">
-                <div class=" p-xs-20"><lang-icon class="icon d-xs-flex pointer " /></div>
+                <div class=" p-xs-20">
+                    <lang-icon class="icon d-xs-flex pointer " />
+                </div>
                 <a  v-if="currentUser" href="#" class="w-50 d-xs-flex justify-center brdr-left-1 brdr-cl-secondary  p-xs-20" @click.prevent="logout" >
                     {{ $t('Logout') }}
                 </a>

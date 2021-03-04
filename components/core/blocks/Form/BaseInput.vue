@@ -3,9 +3,7 @@
     <div class="relative">
       <input
         class="
-         py10 w-100 border-box brdr-none brdr-bottom-1
-         brdr-cl-primary sans-serif
-       "
+         py10 w-100 border-box brdr-round-5"
         :class="{pr30: type === 'password', empty: value === ''}"
         :type="type === 'password' ? passType : type"
         :name="name"
@@ -16,7 +14,7 @@
         @input="$emit('input', $event.target.value)"
         @blur="$emit('blur')"
         @keyup.enter="$emit('keyup.enter', $event.target.value)"
-        @keyup="$emit('keyup', $event)"
+        @keyup="$emit('keyup', $event)"        
       >
       <label>{{ placeholder }}</label>
     </div>
@@ -49,6 +47,7 @@ export default {
     return {
       passType: 'password',
       iconActive: false,
+      inputFocussed: false,
       icon: 'visibility_off'
     }
   },
@@ -104,7 +103,25 @@ export default {
     // setFocus sets focus on a field which has a value of 'ref' tag equal to fieldName
     setFocus (fieldName) {
       if (this.name === fieldName) {
-        this.$refs[this.name].focus()
+        this.$refs[this.name].focus();        
+      }
+    },
+    onFocusChange() {      
+      if (this.value === "") {
+        this.inputFocussed = true
+        console.log('this.focus true',this.$refs)
+      }else {
+        this.inputFocussed = false
+        console.log('this.focus false',this.$refs)
+      }
+    },
+    onBlurr() {
+      if (this.name === "") {
+        setTimeout(this.inputFocussed = false, 100)
+        console.log('this.value',this.$refs)
+      }else{
+        this.inputFocussed = true
+        console.log('this.value',this.$refs)
       }
     }
   },
@@ -121,33 +138,31 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  @import '~theme/css/variables/colors';
-  @import '~theme/css/helpers/functions/color';
+<style lang="scss">
+@import '~theme/css/helpers/functions/color';
+@import '~theme/css/variables/variables';
+
   $color-tertiary: color(tertiary);
   $color-black: color(black);
   $color-puerto-rico: color(puerto-rico);
   $color-hover: color(tertiary, $colors-background);
-  $white: color(white);
-  $lightblue: color(sdg-lightblue);
 
   .base-input {
     min-height: 4.5rem;
-  }
+  
 
   input {
-    background: inherit;
-    border: 1px solid #828282;
-    border-radius: 5px;
-    padding-left: 20px;
-
+    background-color: color(white);
+    border: 1px solid color(sdg-lightblack);
+    padding: 5px 20px;
+    @include media(sm-up){
+      padding: 10px 20px;
+    }
+    font-family: 'Nunito Sans', serif;
     &:hover,
     &:focus {
       outline: none;
-      border-color: $lightblue;
-    }
-    &:not(.empty) {
-      border-color:$lightblue;
+      border-color: color(sdg-lightblue);
     }
 
     &:disabled,
@@ -158,21 +173,25 @@ export default {
     }
   }
   label {
-    color:#828282;
+    color:color(sdg-lightblack);
+    background-color: color(white);
+    padding: 1px 10px 2px;
     position:absolute;
-    background-color: $white;
-    padding: 0 10px;
     pointer-events:none;
     user-select: none;
     left: 10px;
-    top: -8px;
-    font-size:12px;
+    top: 5px;
+    @include media(sm-up){
+      top: 10px;
+    }
     transition:0.2s ease all;
     -moz-transition:0.2s ease all;
     -webkit-transition:0.2s ease all;
   }
-  input:hover ~ label, input:focus ~ label, input:not(.empty) ~ label{
-    color:$lightblue;
+ input:focus ~ label, input:not(.empty) ~ label {
+    top: -10px;
+    font-size: 12px;
+    color: color(sdg-lightblue);
   }
 
   .icon {
@@ -182,5 +201,6 @@ export default {
     &:focus {
       color: $color-hover;
     }
+  }
   }
 </style>

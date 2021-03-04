@@ -2,20 +2,20 @@
     <div class="usp-content">
         <div class="container">
             <div class="row">
-                <div class="col-xs-4">
-                    <div class="usp-block flex flex-column flex-md-row justify-center align-content-center text-center py-xs-20 px-xs-10 px-md-0">                       
+                <div class="col-xs-4 usp-block ">
+                    <div class="flex flex-column flex-md-row justify-center align-content-center text-center py-xs-20 px-xs-10 px-md-0">                       
                         <Icon icon-id="authentic-product" class="usp-icon mr-md-20 mb-xs-10 mb-md-0"></Icon>
                         <div><a href="">Authentic Products</a></div>                       
                     </div>
                 </div>
-                <div class="col-xs-4">
-                    <div class="usp-block flex flex-column flex-md-row justify-center align-content-center text-center py-xs-20 px-xs-10 px-md-0">                        
+                <div class="col-xs-4 usp-block ">
+                    <div class=" flex flex-column flex-md-row justify-center align-content-center text-center py-xs-20 px-xs-10 px-md-0">                        
                         <Icon icon-id="pin" class="usp-icon mr-md-20 mb-xs-10 mb-md-0"></Icon>
                         <div><a href="">Store Pick Up and Returns</a></div>                        
                     </div>
                 </div>
-                <div class="col-xs-4">
-                    <div class="usp-block flex flex-column flex-md-row justify-center align-content-center text-center py-xs-20 px-xs-10 px-md-0">                        
+                <div class="col-xs-4 usp-block">
+                    <div class=" flex flex-column flex-md-row justify-center align-content-center text-center py-xs-20 px-xs-10 px-md-0">                        
                         <Icon icon-id="delivery" class="usp-icon mr-md-20 mb-xs-10 mb-md-0"></Icon>
                         <div><a href="">Free &amp; Safe Delivery</a></div>                        
                     </div>
@@ -45,7 +45,11 @@ export default {
        .usp-block {           
            @include media(md-up) {
             border-right: 1px solid #ddd;
+             &:last-child{
+               border-right: 0;
+            }
            }
+          
            .usp-icon {
                width: 28px;
                height: 28px;

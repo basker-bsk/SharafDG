@@ -1,6 +1,6 @@
 <template>
 
-        <div class="promotional-block pt-xs-15 pb-xl-80">
+        <div class="promotional-block">
             <div class="container pr-xs-0 pr-xs-0 pr-md-10">
                 <div class="row">
                     <div class="col-xs-12 col-lg-2 order-1 order-md-0">
@@ -11,7 +11,7 @@
                     <div class="col-xs-12 col-lg-10 pr-xs-0 pr-md-10">
                         <h3 class="fontWeight-400 d-md-none">Your Favourite Categories</h3>
                         <div class="promotion-block pl-md-10 py-xs-12 py-md-0">
-                            <ul>
+                            <ul class="pb-xs-20 pb-md-0">
                                 <li>   
                                     <a href="">
                                         <div class="image-block">                                        
