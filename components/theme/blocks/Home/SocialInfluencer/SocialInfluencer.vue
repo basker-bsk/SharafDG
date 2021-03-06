@@ -4,7 +4,7 @@
     <div class="container pr-xs-0 px-xs-0 px-md-10">
         <div class="row pb-md-20">
             <div class="col-xs-12 col-md-3 flex align-content-center pl-xs-30 pl-md-10">
-                <h3 class="fontWeight-300">#sharafDGPicks</h3>
+                <h3 class="fontWeight-300">{{ socialinfluencerList.socialinfluencerTitle }}</h3>
             </div>
             <div class="col-xs-12 col-md-9 pr-xs-0 pr-md-10">
                 <div class="card-carousel-wrapper ml-md-80">
@@ -15,11 +15,11 @@
                         <div class="card-carousel--overflow-container">
                             <ul class="card-carousel-cards" :style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}">
                                 <li class="card-carousel--card" 
-                                    v-for="(item, index) in cards" 
+                                    v-for="(item, index) in socialinfluencerList.influencerList" 
                                     :key="index" 
                                     :class="currentTab == index ? 'active' : ''" 
                                     @click="makeActive(index)">
-                                    <img :src="item.name"/>
+                                    <img :src="item.influencerImageThumbnail" :alt="item.influencerImageAltText"/>
                                 </li>
                             </ul>
                         </div>
@@ -32,24 +32,24 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <div class="content-tab" v-for="(item, index) in videos" :key="index">
+                <div class="content-tab" v-for="(item, index) in socialinfluencerList.influencerList" :key="index">
                     <div class="content" v-if="currentTab == index" :class="currentTab == index ? 'active' : ''">
                         <div class="row">
                             <div class="col-md-4 order-1 order-md-0">
-                               <p class="m0">Mariam Shah's top pick</p>
+                               <p class="m0">{{ item.influencerTitle }}</p>
                                <ul class="grid-box d-sm-flex flex-sm-wrap px-xs-12 px-sm-20 py-xs-20 px-md-0 py-md-0">
-                                  <li class="flex p-xs-20" v-for="(item, index) in content" :key="index">
+                                  <li class="flex p-xs-20" v-for="(itemImg, index) in item.productCard" :key="index">
                                      <div class="img-block">
-                                       <img :src="item.img" alt="" />
+                                       <img :src="itemImg.productImage" :alt="itemImg.productImageAltText" />
                                      </div>
                                      <div class="text-block">
-                                       {{ item.text }}
+                                       {{ itemImg.productTitle }}
                                      </div>
                                   </li>
                                </ul>
                             </div>
                             <div class="col-md-8 relative px-xs-0 px-md-10" @click="openVideo(item)">
-                                <img :src="item.img" :alt="item.name" />
+                                <img :src="item.influencerImage" :alt="item.influencerImageAltText" />
                                 <div class="align-content-center flex justify-center play-btn"><Icon icon-id="play" class="play-icon" /></div>
                             </div>
                         </div>
@@ -82,40 +82,198 @@ export default {
     },
     data() {
         return {  
-        currentVideo: [],
-        currentOffset: 0,
-        windowSize: 4,
-        currentTab: 0,
-        currentSlide: 0,
-        paginationFactor: 115,
-        cards: [
-            {name: 'https://picsum.photos/859/350'},
-            {name: 'https://picsum.photos/859/351'},
-            {name: 'https://picsum.photos/859/352'},
-            {name: 'https://picsum.photos/859/353'},
-            {name: 'https://picsum.photos/859/354'},
-            {name: 'https://picsum.photos/859/355'}
-        ],
-        videos: [
-            {name: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', img:'https://picsum.photos/859/350' },
-            {name: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', img:'https://picsum.photos/859/351'},
-            {name: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', img:'https://picsum.photos/859/352'},
-            {name: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4', img:'https://picsum.photos/859/353'},
-            {name: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4', img:'https://picsum.photos/859/354'},
-            {name: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4', img:'https://picsum.photos/859/355'}
-        ],
-        content: [
-            {img: 'https://picsum.photos/200/301', text: 'Apple Watch Series 6 GPS 44mm Space Grey Aluminum Case with Black Sport Band'},
-            {img: 'https://picsum.photos/200/302', text: 'Hugo Boss Femme Women EDP 30ml'},
-            {img: 'https://picsum.photos/200/303', text: 'Armani exchange AX4068S 802913 Havana Women Sunglasses'},
-            {img: 'https://picsum.photos/200/304', text: 'Daily Cross Bag Lavender'}            
-        ]
+          currentVideo: [],
+          currentOffset: 0,
+          windowSize: 4,
+          currentTab: 0,
+          currentSlide: 0,
+          paginationFactor: 115,
+          socialinfluencerList: {
+             "socialinfluencerTitle": "#sharafDGPicks",
+            influencerList: [
+            {
+              "influencerImage": "https://picsum.photos/859/350",
+              "influencerImageThumbnail": "https://picsum.photos/859/350",
+              "influencerImageAltText": "img",
+              "influencerTitle": "Mariam Shah's top pick",
+              "influencerVideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+              "productCard": [
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Apple Watch Series 6 GPS 44mm Space Grey Aluminum Case with Black Sport Band",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1061/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Hugo Boss Femme Women EDP 30ml",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1062/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Armani exchange AX4068S 802913 Havana Women Sunglasses",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1063/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Daily Cross Bag Lavender",
+                  }
+              ]
+            },
+            {
+              "influencerImage": "https://picsum.photos/858/350",
+              "influencerImageThumbnail": "https://picsum.photos/858/350",
+              "influencerImageAltText": "img",
+              "influencerTitle": "Mariam Shah's top pick",
+              "influencerVideoUrl": "https://www.youtube.com/embed/e-E0UB-YDRk",
+              "productCard": [
+                  {
+                    "productImage": "https://picsum.photos/1064/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Apple Watch Series 6 GPS 44mm Space Grey Aluminum Case with Black Sport Band",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1065/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Hugo Boss Femme Women EDP 30ml",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1066/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Armani exchange AX4068S 802913 Havana Women Sunglasses",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1067/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Daily Cross Bag Lavender",
+                  }
+              ]
+            },
+            {
+              "influencerImage": "https://picsum.photos/857/350",
+              "influencerImageThumbnail": "https://picsum.photos/857/350",
+              "influencerImageAltText": "img",
+              "influencerTitle": "Mariam Shah's top pick",
+              "influencerVideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+              "productCard": [
+                  {
+                    "productImage": "https://picsum.photos/1060/703",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Apple Watch Series 6 GPS 44mm Space Grey Aluminum Case with Black Sport Band",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/704",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Hugo Boss Femme Women EDP 30ml",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/705",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Armani exchange AX4068S 802913 Havana Women Sunglasses",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/706",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Daily Cross Bag Lavender",
+                  }
+              ]
+            },
+            {
+              "influencerImage": "https://picsum.photos/856/350",
+              "influencerImageThumbnail": "https://picsum.photos/856/350",
+              "influencerImageAltText": "img",
+              "influencerTitle": "Mariam Shah's top pick",
+              "influencerVideoUrl": "https://www.youtube.com/embed/e-E0UB-YDRk",
+              "productCard": [
+                  {
+                    "productImage": "https://picsum.photos/1060/707",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Apple Watch Series 6 GPS 44mm Space Grey Aluminum Case with Black Sport Band",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/708",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Hugo Boss Femme Women EDP 30ml",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/708",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Armani exchange AX4068S 802913 Havana Women Sunglasses",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/701",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Daily Cross Bag Lavender",
+                  }
+              ]
+            },
+            {
+              "influencerImage": "https://picsum.photos/855/350",
+              "influencerImageThumbnail": "https://picsum.photos/855/350",
+              "influencerImageAltText": "img",
+              "influencerTitle": "Mariam Shah's top pick",
+              "influencerVideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+              "productCard": [
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Apple Watch Series 6 GPS 44mm Space Grey Aluminum Case with Black Sport Band",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Hugo Boss Femme Women EDP 30ml",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Armani exchange AX4068S 802913 Havana Women Sunglasses",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Daily Cross Bag Lavender",
+                  }
+              ]
+            },
+            {
+              "influencerImage": "https://picsum.photos/854/350",
+              "influencerImageThumbnail": "https://picsum.photos/854/350",
+              "influencerImageAltText": "img",
+              "influencerTitle": "Mariam Shah's top pick",
+              "influencerVideoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+              "productCard": [
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Apple Watch Series 6 GPS 44mm Space Grey Aluminum Case with Black Sport Band",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Hugo Boss Femme Women EDP 30ml",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Armani exchange AX4068S 802913 Havana Women Sunglasses",
+                  },
+                  {
+                    "productImage": "https://picsum.photos/1060/702",
+                    "productImageAltText": "image alt text",
+                    "productTitle": "Daily Cross Bag Lavender",
+                  }
+              ]
+            }            
+          ]
+          },
+         
         }
   },
 
   computed: {
     atEndOfList() {
-      return this.currentOffset <= (this.paginationFactor * -1) * (this.cards.length - this.windowSize);
+      return this.currentOffset <= (this.paginationFactor * -1) * (this.socialinfluencerList.influencerList.length - this.windowSize);
     },
     atHeadOfList() {
       return this.currentOffset === 0;
@@ -194,7 +352,7 @@ export default {
           position: absolute;
           top: 55px;
           left: 25px;        
-          z-index: 2;
+          z-index: 3;
         }
         @include media(lg-up) {
           width: 700px;

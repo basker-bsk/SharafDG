@@ -8,8 +8,8 @@
     data-testid="menuButton"
   >
     <Icon class="icon w-xs-20 h-xs-16" icon-id="hamburger" />
-  </button>
-    <div class="mobilemenu_container bg-cl-white">
+    </button>
+    <div class="mobilemenu_container fixed h-100  bg-cl-white">
         <div class="signin_container bg-cl-sdg-darkblue cl-white px-xs-20 h-xs-50 h-md-auto d-xs-flex align-item-center"
         @click="login">
             <div class="user_icon  mr12">
@@ -21,35 +21,14 @@
             <span v-if="currentUser">{{currentUser.firstname}}</span>
         </div>
         <div class="menulinks_container">
-            <div class="menulinks_wrapper" @click="closeSidebarMenu">
-                <ul class="level-1" :class="{'active':openLevelOne}"> 
-                    <li class="bg-cl-primary cl-white px-xs-20 py-xs-20  d-xs-flex align-item-center justify-space-between " @click="openLevelOne = true"
-                    >
-                        <span class="cl-white" href="">Shop All Products</span>
-                        <Icon class="list__arrow cl-white w-xs-12 h-xs-10" icon-id="RightArrow" />
-                    </li>
-                    <li class="bg-cl-primary cl-white px20 py-xs-20  d-xs-flex align-item-center justify-space-between">
-                        <router-link @click="openSidebarMenu = false"  class="no-underline block py10" :to="localizedRoute('/my-account')">Latest Arrivals</router-link>
-                    </li>
-                    
-                </ul>
-            </div>
+            <MobileMenu 
+                :shopallcategories="menuitems.categories.category"
+            />
             <div class="myaccountlinks_wrapper px-xs-20 py-xs-10 bg-cl-white" v-if="currentUser">
                <MyAccountLinks @click="closeSidebarMenu"/>
             </div>
-            <div class="menulinks_wrapper2 px-xs-20 py-xs-10 " @click="closeSidebarMenu">
-                <ul>
-                    <li class="d-xs-flex align-item-center py-xs-10">
-                        <router-link @click="openSidebarMenu = false"  class="no-underline block py10" :to="localizedRoute('/my-account')">
-                        Help
-                        </router-link>
-                    </li>
-                     <li class="d-xs-flex align-item-center py-xs-10">
-                        <router-link @click="openSidebarMenu = false"  class="no-underline block py10" :to="localizedRoute('/my-account')">
-                        Store Locator
-                        </router-link>
-                    </li>                
-                </ul>
+            <div class="px-xs-20 py-xs-10 " @click="closeSidebarMenu">
+                <MenuLinks />
             </div>
         </div>
         <div class="logout_country_container bg-cl-white  brdr-top-1 brdr-cl-secondary w-100">
@@ -70,25 +49,32 @@
 <script>
 import Icon from 'theme/components/custom/Global/Icon'
 import { mapState } from 'vuex'
-import MyAccountLinks from './MyAccountLinks'
-import LangIcon from 'theme/components/core/blocks/Header/LangIcon'
-import AccountIcon from 'theme/components/core/blocks/Header/AccountIcon'
+import MyAccountLinks from '../Shared/MyAccountLinks'
+import MobileMenu from './MobileMenu'
+import MenuLinks from './MenuLinks'
+import LangIcon from '../Shared/LangIcon'
 import i18n from '@vue-storefront/i18n'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 export default {
-    name:'Mobile-Menu',
+    name:'MobileMenuContainer',
      components: {
         Icon,
         LangIcon,
-        AccountIcon,
-        MyAccountLinks
+        MyAccountLinks,
+        MobileMenu,
+        MenuLinks
     },
     data(){
         return{
             openSidebarMenu:false,
-            openLevelOne:false,
             componentLoaded: false,
             isCurrentMenuShowed:true
+        }
+    },
+    props: {
+       menuitems: {
+        type: Object,
+        required: true
         }
     },
     computed:{
@@ -127,20 +113,18 @@ export default {
             await this.$store.dispatch('user/logout', {})
             this.$router.push(this.localizedRoute('/'))
             this.openSidebarMenu = false;  
-            tihs.closeSidebarMenu();
+            this.closeSidebarMenu();
         },
     },
 
 }
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 @import "~theme/css/animations/transitions";
 @import '~theme/css/variables/variables';
 @import '~theme/css/helpers/functions/color';
-.mobilemenu_container, .level-2{
-    position: fixed;
+.mobilemenu_container{    
     width: 80%;
-    height: 100%;
     top:0;
     left: -100%;
     z-index: 10;
@@ -152,9 +136,7 @@ export default {
     .signin_container .icon{
         fill: color(white);
     }
-    .menulinks_wrapper a{
-        color: color(white);
-    }
+    
     .myaccountlinks_wrapper a{
         color: color(black);
     }
@@ -164,26 +146,19 @@ export default {
         letter-spacing: 2px;
     }
 }
-nav{
-    .icon{
-      fill:color(white);
-    }  
+@media (max-width: 767px) {
+    nav{
+        .icon{
+        fill:color(white);
+        }  
+    }
 }
+
 .nav-open{
     .mobilemenu_container{
         left: 0;
         transition-duration: .25s;
-        .level-1{
-            > li{
-                border-bottom: 1px solid rgba(255, 255, 255, .3);                
-            }                       
-        }
-        .level-1.active{
-            .level-2{
-                left: 0;
-                transition-duration: .25s;  
-            }
-        } 
+       
     }
 }
 .signin_container{

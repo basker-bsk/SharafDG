@@ -1,7 +1,7 @@
 <template>
     <modal name="modal-video" :width="800">
-    <div class="close" @click.prevent="closeVideo">Close</div>
-    <iframe width="100%" height="400" :src="currentVideoProps.name" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="close flex justify-flex-end pb-xs-20 pointer" @click.prevent="closeVideo">Close</div>
+    <iframe width="100%" height="400" :src="currentVideoProps.influencerVideoUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </modal>
 </template>
 
@@ -18,8 +18,13 @@ export default {
   methods: {   
     closeVideo() {
       this.$bus.$emit('modal-hide', 'modal-video')      
-    }
-    
+    }    
   }
 };
 </script>
+
+<style scoped>
+.modal .modal-container {
+    padding: 20px;
+}
+</style>

@@ -24,7 +24,7 @@ $display-lists: (block, none, inline-block, inline, flex, inline-flex);
 $direction-lists: (row, row-reverse, column, column-reverse);
 
 @each $breakpoints, $value in $breakpoints {
-  @if ($value == $screen-xs) {
+  @if ($value == $media-xs) {
     @each $direction-list in $direction-lists {
       .flex-#{$direction-list} {
         flex-direction: $direction-list;
@@ -45,7 +45,7 @@ $direction-lists: (row, row-reverse, column, column-reverse);
 $wrap-lists: (nowrap, wrap, wrap-reverse);
 
 @each $breakpoints, $value in $breakpoints {
-  @if ($value == $screen-xs) {
+  @if ($value == $media-xs) {
     @each $wrap-list in $wrap-lists {
       .flex-#{$wrap-list} {
         flex-wrap: $wrap-list;

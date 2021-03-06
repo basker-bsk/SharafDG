@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <newsletter-popup v-if="loadNewsletterPopup" />
+    <!-- <newsletter-popup v-if="loadNewsletterPopup" /> -->
   </div>
 </template>
 
@@ -31,22 +31,6 @@ const NewsletterPopup = () => import(/* webpackChunkName: "vsf-newsletter-modal"
 export default {
   name: 'Newsletter',
   mixins: [SubscriptionStatus],
-  data () {
-    return {
-      loadNewsletterPopup: false
-    }
-  },
-  computed: {
-    ...mapState({
-      isOpen: state => state.ui.newsletterPopup
-    })
-  },
-  methods: {
-    showNewsletterPopup () {
-      this.loadNewsletterPopup = true
-      this.$bus.$emit('modal-show', 'modal-newsletter')
-    }
-  },
   components: {
     ButtonOutline,
     NewsletterPopup

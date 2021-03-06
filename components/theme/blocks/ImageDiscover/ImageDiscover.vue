@@ -80,21 +80,21 @@ export default {
 },
        social_tiles: [
         {
-          image: '/assets/ig/ig01.jpg',
+          image: '/assets/ig/discover1.jpg',
           name: 'Woman practicing on the beach',
           heading: 'Win Prizes!',
           desc: 'Spend more than AED 2,500 to qualify for our lucky draw, T&Cs apply.',
           link: 'Discover Now >'
         },
         {
-          image: '/assets/ig/ig02.jpg',
+          image: '/assets/ig/discover2.jpg',
           name: 'Man practicing on the beach',
           heading: 'Fresh start with Sharaf DG grocery',
           desc: 'Fresh goods and essentials delivered right to your home, quality is always assured.',
           link: 'Discover Now >'
         },
         {
-          image: '/assets/ig/ig03.jpg',
+          image: '/assets/ig/discover3.jpg',
           name: 'Woman drinks water form the bottle on the beach',
           heading: 'Smartphones bonanza',
           desc: 'Save up to 50% off selected smartphones! While stocks last. T&C apply.',
@@ -107,45 +107,35 @@ export default {
 </script>
 
 <style scoped>
-
-
+.image-discover-container {
+	padding: 0;
+}
 .image-discover-container .tile {
 	display: flex;
 	overflow: hidden;
 }
-
 .image-discover-container .tile-image {
 	width: 100%;
 	height: 100%;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
-
 .image-discover-container .image-discover-parent {
 	padding: 10px;
 }
-
-.image-discover-container .image-discover-css span {
+.image-discover-container .image-discover-css {
 	font-size: 14px !important;
-	font-weight: bold;
 	font-family: 'Roboto', sans-serif;
 }
-
+.image-discover-container .image-discover-css span {
+	font-weight: bold;
+}
 .image-discover-container .image-discover-css p {
-	font-size: 14px !important;
-	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 }
-
 .image-discover-container .image-discover-css a {
 	color: #0072ff!important;
-	font-size: 14px!important;
-	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
-}
-
-.image-discover-container {
-	padding: 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -159,23 +149,18 @@ export default {
     padding-left: 0;
   }
 }
-
 .image-discover-container .v-text-left {
 	text-align: left!important;
 }
-
 .image-discover-container .wrap {
 	background: #f7f7f7!important;
 	border-radius: 5px;
 	min-height: 435px;
 }
-
 .image-discover-container .slick-track {
 	margin: 0!important;
 }
-
 .image-discover-container .col-sm-12:focus {
 	outline: none!important;
 }
-
 </style>

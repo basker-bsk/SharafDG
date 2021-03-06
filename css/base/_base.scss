@@ -7,14 +7,19 @@ body {
   box-sizing: border-box;
   outline: none;
 }
+img{
+  max-width: 100%;
+}
 a {
-  color: color(primary);
+  color: color(sdg-lightblue);
   position: relative;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
-
+a.link{
+  color: color(sdg-dark);
+}
 #app {
   overflow-x: hidden;
 }
@@ -64,6 +69,17 @@ ul {
   }
 }
 
+// Custom Scroll
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: color(sdg-orange);
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: color(sdg-orange);
+}
+.custom-scroll::-webkit-scrollbar-thumb:active {
+  background: color(sdg-orange);
+}
+
 // Dropdown arrow
 .list__arrow{     
   transition: all 0.7s;
@@ -82,14 +98,23 @@ ul {
   background-color: rgba(0,0,0,.6);
   left: 0;
 }
-
+.overlay-top{
+  opacity: 0;
+}
 // slick Overwrite styles
 .slick-prev, .slick-next{
   &:before{
     display: none;
   }
   &:hover, &:focus{
-    background: #fff;
-  }
-  
+    background: color(white);
+  }  
 }
+
+// Link Arrow
+.subnav-container{
+  .icon_arrow{
+    fill:color(sdg-blue);
+  }
+}
+

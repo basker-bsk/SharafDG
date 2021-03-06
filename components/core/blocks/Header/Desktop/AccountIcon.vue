@@ -10,25 +10,21 @@
      @click.self="goToAccount()"
     @keyup.enter="goToAccount"
   >
-  <!-- @click.self="goToAccount()"
-    @keyup.enter="goToAccount" -->
     <button
       type="button"
       class="bg-cl-transparent brdr-none p0 align-item-center d-none d-xs-flex"
     >
-    <div class="d-xs-flex align-item-center py-md-20 cl-white account">
-       <div class="user_icon  mr12">
-          <Icon class="icon login w-xs-24 h-xs-24" icon-id="login" />
-          <span v-if="currentUser" class="logged-in"></span>
-       </div>
-        <span v-if="!currentUser">{{ $t('Sign In') }}</span>
-        <span v-if="currentUser">{{currentUser.firstname}}</span>
-        <Icon class="icon list__arrow cl-white w-xs-12 h-xs-10 ml10" :class="{'active':showMenu}" icon-id="downArrow" />
-    </div>
-     <!-- <i class="material-icons block">account_circle</i><span>Sign In</span>-->
+      <div class="d-xs-flex align-item-center py-md-20 cl-white account">
+        <div class="user_icon  mr12">
+            <Icon class="icon login w-xs-24 h-xs-24" icon-id="login" />
+            <span v-if="currentUser" class="logged-in"></span>
+        </div>
+          <span v-if="!currentUser">{{ $t('Sign In') }}</span>
+          <span v-if="currentUser">{{currentUser.firstname}}</span>
+          <Icon class="icon list__arrow cl-white w-xs-12 h-xs-10 ml10" :class="{'active':showMenu}" icon-id="downArrow" />
+      </div>
     </button>
    
-
     <no-ssr>
       <div v-show="currentUser" >
         <div class="dropdown-content align-left lh20 px-md-20 py-md-10 bg-cl-white">
@@ -37,8 +33,7 @@
               <Icon class="w-xs-24 h-xs-24 mr-xs-15" icon-id="signout" />
               <span>{{ $t('Logout') }}</span>
             </a>
-        </div>
- 
+        </div> 
       </div>
     </no-ssr>
   </div>
@@ -49,7 +44,7 @@ import NoSSR from 'vue-no-ssr'
 import { mapState } from 'vuex'
 import Icon from 'theme/components/custom/Global/Icon'
 import AccountIcon from '@vue-storefront/core/compatibility/components/blocks/Header/AccountIcon'
-import MyAccountLinks from './MyAccountLinks'
+import MyAccountLinks from '../Shared/MyAccountLinks'
 
 export default {
   mixins: [AccountIcon],

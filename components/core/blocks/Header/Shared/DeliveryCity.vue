@@ -10,11 +10,33 @@
         <Icon class="list__arrow w-xs-12 h-xs-10 ml10" :class="{ 'active': isDeliveryCityVisible }" icon-id="downArrow" />
     </div>
     <div class="delivery_wrapper bg-cl-white p-xs-30 w-100 absolute" >
+      <fragment v-if="!currentUser">
         <ButtonFull color="primary" class="w-100">Sign in to see your address</ButtonFull>
         <div class="sep"><span>OR</span></div>
         <vue-dropdown :config="city"></vue-dropdown>
         <div class="sep"><span>OR</span></div>
         <vue-dropdown :config="OutsideofUAE"></vue-dropdown>
+      </fragment>
+      <fragment v-if="currentUser">
+        <div class="d-xs-flex flex-xs-column">
+          <label class="d-xs-flex align-item-center mb-xs-20 pointer" for="address">
+            <input type="radio" id="address" name="address" class="w-xs-20 h-xs-20" />
+            <div class="d-xs-flex flex-xs-column align-content-flex-start ml-xs-10">
+              <span class="font-bold">Home</span>
+              <span>P.O. Box 9966, Al Qouz, Dubai, UAE</span>
+            </div>
+          </label>
+          <label class="d-xs-flex align-item-center mb-xs-20 pointer" for="address2">
+            <input type="radio" id="address2" name="address" class="w-xs-20 h-xs-20" />
+            <div class="d-xs-flex flex-xs-column align-content-flex-start ml-xs-10">
+              <span class="font-bold">Home</span>
+              <span>P.O. Box 9966, Al Qouz, Dubai, UAE</span>
+            </div>
+          </label>
+          <div class="sep"><span>OR</span></div>
+          <vue-dropdown :config="OutsideofUAE"></vue-dropdown>
+        </div>
+      </fragment>
     </div>
 </div>
 <div v-if="isDeliveryCityVisible" @click="isDeliveryCityVisible = false" class="overlay" />
@@ -22,14 +44,19 @@
 </template>
 
 <script>
+import NoSSR from 'vue-no-ssr'
+import { Fragment } from 'vue-fragment'
+import { mapState } from 'vuex'
 import ButtonFull from 'theme/components/theme/ButtonFull'
 import Icon from 'theme/components/custom/Global/Icon'
 import vueDropdown from "theme/components/custom/Global/Vue-DropDown";
 export default {
     name: 'Delivery-City',
     components: {
+        'no-ssr': NoSSR,
         ButtonFull,
         Icon,
+        Fragment,
         vueDropdown
     },
     data () {
@@ -67,6 +94,11 @@ export default {
       }
     }
     },
+    computed:{
+        ...mapState({
+          currentUser: state => state.user.current
+        }),
+    },
     watch: {
     $route () {
       this.isHelpMenuVisible = false;
@@ -91,13 +123,16 @@ export default {
     .delivery_container + .overlay{
         top: 118px;
     }
-
 }
 
 .delivery_wrapper{
     top:41px;
     z-index: 3;
-    display: none;    
+    display: none;
+    font-size: 14px;
+    input:checked + div{
+      color: color(sdg-blue);
+    } 
 }
 .delivery_active {
     .delivery_wrapper{ 

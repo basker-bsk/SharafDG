@@ -136,25 +136,7 @@
                 </h5>
                 <ul class="menu-links">
                     <li>
-                    <form v-if="!isCheckoutPage" class="pb-xs-20">
-                    <base-input                      
-                      type="email"
-                      name="email"
-                      v-model="email"
-                      @blur="$v.email.$touch()"
-                      :placeholder="$t('Email')"
-                      :validations="[
-                        {
-                          condition: !$v.email.required && $v.email.$error,
-                          text: $t('Field is required.')
-                        },
-                        {
-                          condition: !$v.email.email && $v.email.$error,
-                          text: $t('Please provide valid e-mail address.')
-                        }
-                      ]"
-                    />
-                    </form>
+                    <NewsletterPopup />
                     <div class="flex pb-xs-20">
                         <div class="mr-xs-12"><img src="https://dummyimage.com/70x50/aaa/222" alt="" /></div>
                         <div><img src="https://dummyimage.com/70x50/aaa/222" alt="" /></div>
@@ -189,7 +171,7 @@
                       </div>
                   </div>
                   <div class="col-md-7 col-xs-12">
-                      <ul class="d-md-flex between-md m0">
+                      <ul class="d-xs-flex between-md m0">
                         <li class="flex middle-md footer-help pr-md-45">                          
                           <div>
                             <h3>Sell at Sharaf DG</h3>
@@ -403,8 +385,11 @@ import Icon from 'theme/components/custom/Global/Icon'
 
 import ButtonOutline from 'theme/components/theme/ButtonOutline'
 import ButtonFull from 'theme/components/theme/ButtonFull'
-import BaseInput from 'theme/components/core/blocks/Form/BaseInput.vue'
-import { required, email } from 'vuelidate/lib/validators'
+
+
+
+const NewsletterPopup = () => import(/* webpackChunkName: "vsf-newsletter-modal" */ 'theme/components/core/NewsletterPopup.vue')
+
 export default {
   mixins: [CurrentPage],
   name: 'MainFooter',
@@ -457,12 +442,7 @@ export default {
           ]
     };
   },
-  validations: {
-      email: {
-        required,
-        email
-      }
-    },
+  
   methods: {
     goToAccount () {
       this.$bus.$emit('modal-toggle', 'modal-signup')
@@ -507,7 +487,7 @@ export default {
     Icon,
     ButtonOutline,
     ButtonFull,
-    BaseInput
+    NewsletterPopup
   }
 }
 </script>
@@ -627,23 +607,26 @@ $color-secondary: color(secondary);
       width: 30px;
       height: 30px;
       position: absolute;
-      right: 30px;
-      top: 11px;
-      background:
-        linear-gradient(#fff,#fff),
-        linear-gradient(#fff,#fff),
-        #000;
-      background-position:center;
-      background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
-      background-repeat:no-repeat;
-      &.alt {
-        background:
-          linear-gradient(#000,#000),
-          linear-gradient(#000,#000);
-        background-position:center;
-        background-size: 50% 1px,1px 50%; /*thickness = 2px, length = 50% (25px)*/
-        background-repeat:no-repeat;
+      right: 15px;
+      top: 16px;
+      &:before {
+        content: "";
+        width: 17px;
+        height: 1px;
+        position: absolute;
+        top: 8px;
+        background-color: color(black);
       }
+      &:after {
+        content: "";
+        width: 1px;
+        height: 17px;
+        position: absolute;
+        left: 8px;
+        transition: all 0.3s ease;
+        background-color: color(black);
+      }
+     
       @media (min-width: 1024px) {
           display: none;
         }
@@ -655,8 +638,8 @@ $color-secondary: color(secondary);
     &.icon--active {
       border-color: color(white);
       .plus {         
-        &.alt {
-          background-size: 50% 1px,0px 50%;
+        &:after {          
+          transform: rotate(-90deg);
         }
       }
     }

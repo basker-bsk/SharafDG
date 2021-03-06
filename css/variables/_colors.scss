@@ -58,6 +58,7 @@ $colors-theme: (
 $colors-border: (
   primary: map-get($colors, silver),
   secondary: map-get($colors, gainsboro),
+  tertiary: map-get($colors, sdg-orange),
 );
 
 $colors-background: (

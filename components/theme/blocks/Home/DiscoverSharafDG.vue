@@ -1,6 +1,6 @@
 <template>
 <div class="discover-sharaf">
-    <div class="d-xs-flex flex-column flex-md-row align-item-center container pr-xs-0">
+    <div class="d-xs-flex flex-xs-column flex-md-row align-item-center container pr-xs-0">
         <div class="col-xs-12 col-md-3 pr-xs-0 pl-xs-0 pr-md-20 pr-lg-40 mb-xs-30 mb-md-0">
             <h6 class="mt-xs-0 mb-xs-10 text-uppercase font-bold">Discover Sharaf DG</h6>
             <h3 class="m-xs-0 font-normal">Don't just shop online, discover Sharaf DG</h3>

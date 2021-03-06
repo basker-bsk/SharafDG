@@ -2,11 +2,8 @@
    <div class="still-banner-container">
       <div class="container center-xs">
          <section class="top-banner-section">
-            <div class="banner-image-div" v-for="(name,index) in data" :key="index">
-               <img
-                  class="tile-image banner-image"
-                  v-lazy="name.image">
-               <div class="still-banner-css">
+            <div class="banner-image-div" v-for="(name,index) in data" :key="index" :style="{ backgroundImage: `url(${name.image})` }">
+               <div class="still-banner-css" v-for="(name,index) in data" v-bind:class="{'v-align-right': name.rightAlign, 'center-xs': name.centerAlign, 'v-align-left': name.leftAlign}">
                   <span v-html="name.heading">{{ name.heading }}</span>     
                   <p v-html="name.desc">{{ name.desc }}</p>
                   <button href="" v-html="name.action">{{ name.action }}</button>
@@ -27,39 +24,43 @@ export default {
         return (item);
       })
     }
-  }
+  }  
 };
 </script>
 
 <style lang='scss' scoped>
 
-
+.v-align-left {
+	text-align: left;
+}
+.v-align-center {
+	text-align: center;
+}
+.v-align-right {
+	text-align: right;
+}
 .still-banner-container .tile {
 	display: flex;
 	overflow: hidden;
 }
-
 .still-banner-container .tile-image {
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
 }
 
+
 .still-banner-container .still-banner-css {
-	position: absolute;
-	float: left;
 	width: 100%;
-	text-align: left;
-	top: 0;
-	padding: 20px;
+	padding: 20px 60px;
 }
 
 .still-banner-container .still-banner-css span {
-	font-size: 28px;
+	font-size: 34px;
 	width: 25%;
 	margin: 15px 0;
 	font-weight: normal;
-	display: flex;
+	display: -webkit-inline-box;
 	color: #ffffff;
 }
 
@@ -70,8 +71,7 @@ export default {
 
 .still-banner-container .still-banner-css button {
 	margin-top: 15px;
-	width: 20%;
-	padding: 12px 0;
+	padding: 12px 50px;
 	border-radius: 5px;
 	/* border-color: white; */
 	border-width: inherit;
@@ -92,14 +92,7 @@ export default {
 		padding: 25px;
 	}
 	.still-banner-container .still-banner-css span {
-		width: 65%;
-	}
-	.still-banner-container .still-banner-css p {
-		font-size: 13px;
-		width: 55%;
-	}
-	.still-banner-container .still-banner-css button {
-		width: 55%;
+		width: auto;
 	}
 	.still-banner-container .banner-image {
 		height: 100%!important;
@@ -118,25 +111,12 @@ export default {
 }
 
 .still-banner-container .banner-image-div {
-	position: relative;
+	border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-
-.still-banner-container .top-banner-section .banner-image-div {
-	grid-area: 0.25;
-}
-
-.still-banner-container .top-banner-section .banner-overlay-div {
-	grid-area: 0.25;
-}
-
-.still-banner-container .top-banner-section .banner-text-div {
-	grid-area: 0.25;
-}
-
-.still-banner-container .banner-image {
-	display: grid;
-	min-width: 350px;
-	width: 100%;
-	}
 
 </style>

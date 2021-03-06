@@ -1,8 +1,7 @@
 <template>
-
-  <div class="col-md-7 brdr-right-1 brdr-cl-secondary p-md-15 dropdown-center">
+  <div class="col-md-7 brdr-right-1 brdr-cl-secondary py-md-15 px-md-25 dropdown-center">
         <div v-for="(item, index) of subCategoryList1"
-          :key="index" class="menulist"
+          :key="index" class="menulist pr-xs-20"
         >
           <a class="list__link" href="" >
             <strong class="list__content ">
@@ -17,7 +16,6 @@
         </div>     
     </div>
 </template>
-
 <script>
 
 export default {
@@ -39,12 +37,6 @@ export default {
         return index <= 9
       })
     },
-
   },
-
 }
 </script>
-
-<style lang="scss" >
-
-</style>

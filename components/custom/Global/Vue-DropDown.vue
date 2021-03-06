@@ -8,13 +8,15 @@
       { '--dropdown-width': width + '%' }
     ]"
   >
-    <span class="label w-100 px-xs-10 d-xs-flex align-item-center">
-      <span v-if="selectedText.flag" class="flag d-xs-flex"><img :src="selectedText.flag" class="w-xs-20 h-xs-20 mr-xs-10" /></span>
+    <span class="label w-100 px-xs-15 d-xs-flex align-item-center">
+      <span v-if="selectedText.flag" class="flag d-xs-flex">
+        <img :src="selectedText.flag" class="w-xs-20 h-xs-20 mr-xs-10" />
+      </span>
       <span>{{ (selectedText.value ? selectedText.value : config.placeholder) }}</span>
     </span>
     <Icon class="list__arrow w-xs-12 h-xs-10" :class="{'active':isBottomSectionToggled}" icon-id="downArrow" />
    
-    <div v-if="isBottomSectionToggled"   class="options w-100 d-xs-flex flex-column ">
+    <div v-if="isBottomSectionToggled"   class="options w-100 d-xs-flex flex-xs-column pt-xs-5">
       <div v-for="(option,index) in configOptions" :key="index" class="d-xs-flex align-item-center option px-xs-15"  @click="setCurrentSelectedOption(option);" >
         <span v-if="option.flag" class="flag d-xs-flex"><img :src="option.flag" class="w-xs-20 h-xs-20 mr-xs-10" /></span>
         <span>{{ option.value }}</span>
@@ -24,6 +26,7 @@
 </template>
 <script>
 import Icon from 'theme/components/custom/Global/Icon'
+import { Fragment } from 'vue-fragment'
 export default {
   name: "dropdown",
   data() {
@@ -38,6 +41,7 @@ export default {
   },
   components: {
     Icon,
+    Fragment,
   },
   props: ["config"],
   computed: {},
@@ -47,6 +51,7 @@ export default {
     },
     setCurrentSelectedOption(option) {
       this.selectedText = option;
+      this.$emit('clicked', option);
      // this.$emit("setSelectedOption", option);
     },
     setConfigData() {

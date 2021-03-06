@@ -1,20 +1,12 @@
-<template>
-  <modal name="modal-newsletter" :width="450">
-    <p slot="header">
-      {{ $t('Newsletter') }}
-    </p>
-    <div slot="content">
+<template>  
       <form @submit.prevent="subscribe(onSuccesfulSubmission)" novalidate>
-        <div class="mb10">
-          <p class="h4">
-            {{ $t('Sign up to our newsletter and receive a coupon for 10% off!') }}
-          </p>
-          <base-input
-            focus
+        <div class="mb10 pt-xs-6">
+          
+          <base-input            
             type="email"
             name="email"
             v-model="email"
-            autocomplete="email"
+            autocomplete="off"
             :placeholder="$t('E-mail address *')"
             :validations="[
               {
@@ -29,16 +21,16 @@
           />
         </div>
         <button-full
-          class="mb35"
+          class="mb35 d-xs-none"
           type="submit"
+          color="primary"
           :disabled="this.$v.$invalid"
           @click.native="$v.email.$touch"
         >
           {{ $t('Subscribe') }}
         </button-full>
       </form>
-    </div>
-  </modal>
+   
 </template>
 <script>
 import SubscriptionStatus from '@vue-storefront/core/modules/newsletter/mixins/SubscriptionStatus'
@@ -46,15 +38,11 @@ import Subscribe from '@vue-storefront/core/modules/newsletter/mixins/Subscribe'
 import i18n from '@vue-storefront/i18n'
 
 import ButtonFull from 'theme/components/theme/ButtonFull.vue'
-import Modal from 'theme/components/core/Modal'
+
 import BaseInput from 'theme/components/core/blocks/Form/BaseInput.vue'
 
 export default {
-  mounted () {
-    this.$nextTick(() => {
-      this.$bus.$emit('modal-show', 'modal-newsletter')
-    })
-  },
+ 
   beforeDestroy () {
     this.$off('validation-error')
   },
@@ -68,12 +56,11 @@ export default {
         })
       }
 
-      this.$bus.$emit('modal-hide', 'modal-newsletter')
+     
     }
   },
   components: {
     ButtonFull,
-    Modal,
     BaseInput
   },
   mixins: [
