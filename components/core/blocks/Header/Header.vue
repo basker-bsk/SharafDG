@@ -2913,13 +2913,13 @@ export default {
               "brands": [
                 {
                   "url": "/en/home",
-                  "openNewTab": "true",
+                  "openNewTab": "",
                   "id": "128-durian",
                   "name": "128 Durian"
                 },
                 {
                   "url": "/en/brand/1513",
-                  "openNewTab": "",
+                  "openNewTab": "true",
                   "id": "1513",
                   "name": "1513"
                 },

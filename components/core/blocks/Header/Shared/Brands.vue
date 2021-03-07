@@ -21,6 +21,7 @@
                                     <input
                                         ref="autocompletesearch"
                                         name="search"
+                                        v-model="searchQuery"
                                         class="input__field search-form__input brdr-none py-xs-10 brdr-round-5 "
                                         :placeholder="$t(categoryitems.searchPlaceholder)"
                                         type="text"
@@ -33,7 +34,9 @@
                                         <p class="font-bold mt-xs-0">{{lists.code}}</p>
                                         <ul class="d-xs-flex flex-xs-column mb-xs-15">
                                             <li v-for="(list,index) in lists.brands" :key="index" class="pb-xs-5">
-                                                <router-link :to="localizedRoute('/')" class="link">{{list.name}}</router-link>
+                                                <router-link :to="localizedRoute(list.url)" class="link" :target="list.openNewTab?'_blank':''">
+                                                    {{list.name}}
+                                                </router-link>
                                             </li>
                                         </ul> 
                                     </div>
@@ -64,6 +67,7 @@ export default {
     },
     data () {
         return {
+            searchQuery: null,
             brandList:[],
         }
     },
