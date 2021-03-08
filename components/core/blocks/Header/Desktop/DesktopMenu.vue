@@ -96,9 +96,6 @@ export default {
         this.isHelpMenuVisible = false;
       },
     },
- 
- 
-  
 }
 </script>
 <style  lang="scss">
@@ -156,10 +153,6 @@ export default {
     }
   }
 }
-  
-  
-
-
 .nav-active .subnav-container{
   display: block;
 }
@@ -184,5 +177,4 @@ export default {
         top: 118px;
     }
 }
-
 </style>

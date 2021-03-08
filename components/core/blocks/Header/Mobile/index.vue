@@ -9,17 +9,17 @@
   >
     <Icon class="white w-xs-20 h-xs-16" icon-id="hamburger" />
     </button>
-    <div class="mobilemenu_container z-xs-10 top-0 fixed h-100  bg-cl-white w-80p">
+    <div class="mobilemenu_container z-xs-10 top-0 fixed h-100  bg-cl-sdg-lightgray w-80p">
         <div class="d-xs-flex flex-xs-column">
-            <div class="signin_container bg-cl-sdg-darkblue cl-white px-xs-20 h-xs-50 h-md-auto d-xs-flex align-item-center"
+            <div class="signin_container bg-cl-sdg-darkblue uppercase cl-white px-xs-20 h-xs-50 h-md-auto d-xs-flex align-item-center"
             @click="login">
-                <div class="user_icon  mr12">
+                <div class="user_icon relative mr12">
                     <Icon class="white w-xs-24 h-xs-24 " icon-id="login" />
-                    <span v-if="currentUser" class="logged-in"></span>
+                    <span v-if="currentUser" class="logged-in absolute  bg-cl-sdg-orange"></span>
                 </div>
                 <a class="link-white" v-if="!currentUser" 
                 href="#" @click.prevent="closeMenu">Sign In</a>
-                <span v-if="currentUser">{{currentUser.firstname}}</span>
+                <span v-if="currentUser" class="uppercase">{{currentUser.firstname}}</span>
             </div>
             <div class="menulinks_container">
                     <MobileMenu :shopallcategories="menuitems.categories.category" />
@@ -128,35 +128,22 @@ export default {
     overflow: auto;
     transition-duration: .25s;
 }
-.mobilemenu_container{
-    background: color(sdg-lightgray);
-    .myaccountlinks_wrapper a{
-        color: color(black);
-    }    
-}
-
-
 .nav-open{
     .mobilemenu_container{
         left: 0;
-        transition-duration: .25s;
-       
+        transition-duration: .25s;       
     }
 }
 .signin_container{
-    text-transform: uppercase;
     letter-spacing: 1px;
     .user_icon{
-        position: relative;
         .logged-in{
-            position: absolute;
-            width: 8px;
-            height: 8px;
             border-radius: 50%;
             border:1px solid color(white);
-            background: color(sdg-orange);
             right: -2px;
             top:0;
+            width: 8px;
+            height: 8px;
         }
     }   
 }
