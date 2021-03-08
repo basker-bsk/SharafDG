@@ -3,7 +3,8 @@
       <div class="container center-xs">
          <section class="top-banner-section">
             <div class="banner-image-div" v-for="(name,index) in data" :key="index" :style="{ backgroundImage: `url(${name.image})` }">
-               <div class="still-banner-css" v-for="(name,index) in data" v-bind:class="{'v-align-right': name.rightAlign, 'center-xs': name.centerAlign, 'v-align-left': name.leftAlign}">
+               <div class="still-banner-css" v-for="(name,index) in data" :key="index"
+			   v-bind:class="{'v-align-right': name.rightAlign, 'center-xs': name.centerAlign, 'v-align-left': name.leftAlign}">
                   <span v-html="name.heading">{{ name.heading }}</span>     
                   <p v-html="name.desc">{{ name.desc }}</p>
                   <button href="" v-html="name.action">{{ name.action }}</button>

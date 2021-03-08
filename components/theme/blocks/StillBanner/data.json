@@ -1,10 +1,10 @@
 {
-    "accounts": [
-      { "image": "https://www.hiddenbrains.co.uk/wp-content/uploads/layerslider/Homepage-Slider/Banner-Hire.jpg", 
-        "heading": "New LG OLED TV has arrived",
-        "desc": "Do not miss this exclusive chance to get LG OLED TV!",
-        "action": "SHOP NOW" 
-    }
-    ]
+  "accounts": [
+    { "image": "/assets/ig/stillbanner.jpg", 
+      "heading": "New LG OLED TV has arrived",
+      "desc": "Do not miss this exclusive chance to get LG OLED TV!",
+      "action": "SHOP NOW",
+      "leftAlign": true
+  }  
+  ]
 }
-  
