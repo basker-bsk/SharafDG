@@ -1,5 +1,5 @@
 <template>
-     <div class="subnav-container bg-white w-100 brdr-cl-secondary brdr-top-1">
+     <div class="subnav-container z-xs-5 bg-white w-100 brdr-cl-secondary brdr-top-1">
         <div class="subnav-wrapper">
             <div class="container px-md-0 h-100 bg-white">
                 <div class="h-100 d-xs-flex">

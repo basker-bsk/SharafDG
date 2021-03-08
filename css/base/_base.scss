@@ -17,8 +17,11 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
-a.link{
+a.link-dark{
   color: color(sdg-dark);
+}
+a.link-white{
+  color: color(white);
 }
 #app {
   overflow-x: hidden;
@@ -110,7 +113,16 @@ ul {
     background: color(white);
   }  
 }
-
+// Icon Color
+.icon.dark{
+  fill:color(sdg-dark)
+}
+.icon.white{
+  fill:color(white)
+}
+.icon.primary{
+  fill:color(sdg-primary)
+}
 // Link Arrow
 .subnav-container{
   .icon_arrow{
@@ -118,3 +130,7 @@ ul {
   }
 }
 
+//menu transition
+.transition-300-ease-in-out {
+  transition: all .3s ease-in-out;
+}

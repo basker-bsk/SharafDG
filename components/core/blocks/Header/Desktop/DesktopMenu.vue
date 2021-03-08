@@ -1,15 +1,15 @@
 <template>
     <nav >
       <div class="nav-container relative w-100 bg-white brdr-cl-secondary brdr-bottom-1">
-        <div class="container px-xs-0 px-md-10">
+        <div class="topnav-container container px-xs-0 px-md-10">
           <div class="row">
-              <div class="col-md-2 justify-space-between brdr-right-1 brdr-cl-secondary d-xs-none d-md-flex pointer align-item-center" 
+              <div class="col-md-2 col-lg-2 justify-space-between brdr-right-1 brdr-cl-secondary d-xs-none d-md-flex pointer align-item-center" 
               @mouseover="showMenu(categoryitems.categories.category.link.title);shopallHovering=true;"
                >
                   <a href="#" class="py-xs-12 link">{{categoryitems.categories.category.link.title}}</a>
-                   <Icon class="list__arrow cl-white w-xs-12 h-xs-10 ml10" icon-id="downArrow" :class="{ 'active': shopallHovering }" />
+                   <Icon class="list__arrow w-xs-12 h-xs-10 ml10" icon-id="downArrow" :class="{ 'active': shopallHovering }" />
               </div>
-              <div class="col-md-6 col-lg-7 d-md-flex d-xs-none" >
+              <div class="col-md-7 col-lg-7 d-md-flex d-xs-none" >
                 <ul class="levelone-menu d-xs-flex">
                   <!-- Brands -->
                    <li @mouseover="showMenu(categoryitems.brands.brand.link.title);isHovering=true;"                  
@@ -25,7 +25,7 @@
                   </li>                 
                 </ul>
               </div>
-              <div class="col-md-4 col-xs-12 col-lg-3 center-xs ">
+              <div class="col-md-3 col-xs-12 col-lg-3 center-xs ">
                   <DeliveryCity ></DeliveryCity>
               </div>
           </div>
@@ -124,12 +124,16 @@ export default {
     }
   }
 }
+.topnav-container{
+  a{
+    color: color(sdg-dark);
+  }
+}
 .subnav-container{
   position: absolute;
   overflow: hidden;
   left: 0;
   display: block;
-  z-index: 10;
   background: color(white); 
   .subnav-wrapper{  
     overflow: hidden;

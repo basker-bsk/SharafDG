@@ -6,7 +6,7 @@
       @mouseover="showMenu = true"  @mouseout="showMenu = false">
        <img :src="setSelectedFlag?setSelectedFlag:city.options[0].flag" class="w-xs-20 h-xs-20 mr-xs-10" alt=""/> 
         <span class="">{{setSelectedLang?setSelectedLang:city.options[0].lang}}</span>
-        <Icon class="list__arrow w-xs-12 h-xs-10 ml5"  :class="{'active':showMenu}" icon-id="downArrow" />
+        <Icon class="list__arrow white w-xs-12 h-xs-10 ml5"  :class="{'active':showMenu}" icon-id="downArrow" />
     </div>
     <div class="language_wrapper bg-cl-white p-xs-20 absolute" >
         <vue-dropdown :config="city" @clicked="selectedFlag"></vue-dropdown>

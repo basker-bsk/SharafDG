@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <header class=" w-100 header header--banner ">
+    <header class="z-xs-10 w-100 header header--banner ">
       <div class="header__main header-container py-xs-10 align-item-center d-xs-flex py-md-0 bg-cl-sdg-blue ">
         <div class="container">
         <div class="align-item-center d-xs-flex"  v-if="!isCheckoutPage || isThankYouPage">       
@@ -2686,7 +2686,7 @@ export default {
           ],
           "link": {
             "emptyMenu": false,
-            "title": "Shop All Categories123"
+            "title": "Shop All Products"
           },
           ":type": "ishop/components/content/category"
         }
@@ -3136,8 +3136,7 @@ $color-icon-hover: color(secondary, $colors-background);
 
 header {
   height: auto;
-  top: 0px;
-  z-index: 10;  
+  top: 0px; 
   transition: top 0.2s ease-in-out;
   &.is-visible {
     top: 0;
@@ -3148,14 +3147,7 @@ header {
 .search_icon{
     fill: color(black);
   }
-.header__right-wrapper{
-    .icon{
-      fill: color(white);
-    }    
-  .dropdown-content .icon{
-      fill: color(black);
-  }
-}
+
 // menu
 .sub-nav-list{
   display: none;
@@ -3205,11 +3197,7 @@ header {
     background-color: color(transparent);
   }
 }
-.myaccountlinks_wrapper, .header__search-wrapper{
-    .icon{
-      fill:color(black);
-    }
-  }
+
 
 .subcat-section{
   display:flex;
@@ -3250,11 +3238,5 @@ header {
     flex-basis: 22%;
   }
 }  
-.header__right-wrapper{
-  .language_wrapper{
-      .icon{
-          fill: color(black);
-      }      
-  }
-}
+
 </style>

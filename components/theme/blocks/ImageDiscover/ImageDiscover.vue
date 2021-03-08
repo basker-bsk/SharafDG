@@ -1,5 +1,6 @@
 <template>
    <div class="image-discover-container container">
+   
       <VueSlickCarousel v-bind="settings">
          <div class="col-sm-12 pb15"
             v-for="(tile, index) in social_tiles"
@@ -81,23 +82,20 @@ export default {
        social_tiles: [
         {
           image: '/assets/ig/discover1.jpg',
-          name: 'Woman practicing on the beach',
           heading: 'Win Prizes!',
           desc: 'Spend more than AED 2,500 to qualify for our lucky draw, T&Cs apply.',
           link: 'Discover Now >'
         },
         {
           image: '/assets/ig/discover2.jpg',
-          name: 'Man practicing on the beach',
           heading: 'Fresh start with Sharaf DG grocery',
           desc: 'Fresh goods and essentials delivered right to your home, quality is always assured.',
           link: 'Discover Now >'
         },
         {
           image: '/assets/ig/discover3.jpg',
-          name: 'Woman drinks water form the bottle on the beach',
           heading: 'Smartphones bonanza',
-          desc: 'Save up to 50% off selected smartphones! While stocks last. T&C apply.',
+          desc: 'Save up to 50% off selected smartphones! While stocks last. T&Cs apply.',
           link: 'Discover Now >'
         }
       ] 
@@ -148,6 +146,9 @@ export default {
   .image-discover-container .col-sm-12.pb15 {
     padding-left: 0;
   }
+  .image-discover-container .tile-image {
+	  height: 190px;
+  }
 }
 .image-discover-container .v-text-left {
 	text-align: left!important;
@@ -155,7 +156,6 @@ export default {
 .image-discover-container .wrap {
 	background: #f7f7f7!important;
 	border-radius: 5px;
-	min-height: 435px;
 }
 .image-discover-container .slick-track {
 	margin: 0!important;

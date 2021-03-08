@@ -88,6 +88,9 @@ export default {
 	.still-banner-container .container {
 		padding: 0;
 	}
+	.still-banner-container .banner-image-div {
+		border-radius: 0px!important;
+	}
 	.still-banner-container .still-banner-css {
 		padding: 25px;
 	}

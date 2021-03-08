@@ -1,5 +1,5 @@
 <template>
-    <div class="subnav-container  bg-white w-100 brdr-cl-secondary brdr-top-1">
+    <div class="subnav-container z-xs-5 bg-white w-100 brdr-cl-secondary brdr-top-1">
         <div class="sharaf-experiences">
         <div class=" px-md-0 h-100 bg-white">
             <div class="container h-85 d-xs-flex pt-xs-35 flex-xs-column flex-xs-wrap">
@@ -60,9 +60,6 @@ export default {
     }
     .h-15{
         height: 15%;
-    }
-    .icon{
-        fill:color(sdg-blue);
     }
 }
 </style>

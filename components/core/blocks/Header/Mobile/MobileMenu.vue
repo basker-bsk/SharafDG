@@ -1,18 +1,19 @@
 <template>
      <div class="menulinks_wrapper">
         <ul class="level-1"> 
-            <li class="bg-cl-primary cl-white px-xs-20 py-xs-20  d-xs-flex align-item-center justify-space-between " @click="openLevelOne = true"
+            <li class="bg-cl-primary cl-white px-xs-20 py-xs-20  d-xs-flex align-item-center justify-space-between " 
+            @click="setSelectedCategory(shopallcategories.link.title)"
             >
                 <span class="cl-white" href="">{{shopallcategories.link.title}}</span>
                 <Icon v-if="shopallcategories.categoryItems.length > 0" 
-                class="list__arrow cl-white w-xs-12 h-xs-10" icon-id="RightArrow" />
-            </li>
-            <!-- <li class="bg-cl-primary cl-white px20 py-xs-20  d-xs-flex align-item-center justify-space-between">
-                <router-link @click="openSidebarMenu = false"  class="no-underline block py10" :to="localizedRoute('/my-account')">Latest Arrivals</router-link>
-            </li>    -->
-            
+                class="list__arrow white w-xs-12 h-xs-10" icon-id="RightArrow" />
+            </li>            
         </ul>
-        <ShopAllCategoriesMobile :shopallcategories="shopallcategories.categoryItems"/>
+        <ShopAllCategoriesMobile 
+            :data="shopallcategories.categoryItems"
+            :categorySelected="(selectedCategory === shopallcategories.link.title)"            
+            :isMenuOpen="isMenuOpen"
+        />
     </div>
 </template>
 <script>
@@ -28,6 +29,9 @@ export default {
         return{
             openLevelOne:false,
             openSidebarMenu:false,
+            selectedCategory:String,
+            isMenuOpen:false,
+            categorySelected:Boolean,
         }
     },
     props: {
@@ -37,11 +41,13 @@ export default {
         }
     },
       methods: {
-        openMenu (){
-            this.openSidebarMenu = !this.openSidebarMenu;
+        setSelectedCategory (value){
+            this.selectedCategory = value;
+            this.isMenuOpen = true;
         },
-        closeSidebarMenu (){
-            this.openSidebarMenu = !this.openSidebarMenu;
+        resetSelectedCategory (){
+            this.selectedCategory = '';
+            return true
         }, 
     },
 }
@@ -50,9 +56,7 @@ export default {
 @import '~theme/css/variables/variables';
 @import '~theme/css/helpers/functions/color';
 .menulinks_wrapper{
-    .icon{
-      fill:color(white);
-    }  
+ 
     a{
         color: color(white);
     }

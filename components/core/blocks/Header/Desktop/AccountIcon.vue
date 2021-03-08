@@ -16,12 +16,12 @@
     >
       <div class="d-xs-flex align-item-center py-md-20 cl-white account">
         <div class="user_icon  mr12">
-            <Icon class="icon login w-xs-24 h-xs-24" icon-id="login" />
+            <Icon class="white login w-xs-24 h-xs-24" icon-id="login" />
             <span v-if="currentUser" class="logged-in"></span>
         </div>
           <span v-if="!currentUser">{{ $t('Sign In') }}</span>
           <span v-if="currentUser">{{currentUser.firstname}}</span>
-          <Icon class="icon list__arrow cl-white w-xs-12 h-xs-10 ml10" :class="{'active':showMenu}" icon-id="downArrow" />
+          <Icon class="icon list__arrow white w-xs-12 h-xs-10 ml10" :class="{'active':showMenu}" icon-id="downArrow" />
       </div>
     </button>
    
@@ -88,9 +88,7 @@ $color-icon-hover: color(secondary, $colors-background);
     font-weight: bold;
     letter-spacing: 1.5px;
   }
-  .icon{
-    fill: #fff;
-  }
+
   button {
     pointer-events: none;
   }

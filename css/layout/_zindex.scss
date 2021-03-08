@@ -1,0 +1,30 @@
+// .z1, .z-xs-10  - example classes for z-index
+// indexes
+$zindex: 1 2 3 4 5 6 7 8 9 10;
+
+// Generators
+@mixin zindex {
+  @each $breakpoint, $value in $breakpoints {
+    // Only for mobile (XS)
+    @if ($value == $media-xs) {
+      @each $i in $zindex {
+        .z#{$i} {
+            z-index: #{$i};
+        }
+      }      
+    } 
+    // For [sm, md, lg]
+    @else {
+      @include mq($value) {
+        @each $i in $zindex {
+          .z-#{$breakpoint}-#{$i} {
+            z-index: #{$i};
+          }
+        }       
+      }
+    }
+  }
+  
+}
+
+@include zindex;

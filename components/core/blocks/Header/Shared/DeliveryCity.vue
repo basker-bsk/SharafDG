@@ -5,7 +5,7 @@
  @click="isDeliveryCityVisible = true" 
 @mouseover="isDeliveryCityVisible = true" @mouseout="isDeliveryCityVisible = false" >
     <div class="d-xs-flex justify-center justify-md-xs-flex-end align-item-center" >
-        <Icon class="cl-white w-xs-24 h-xs-24 mr5" icon-id="pin" />
+        <Icon class="white w-xs-24 h-xs-24 mr5" icon-id="pin" />
         <span>Delivery to Dubai Festival City</span>
         <Icon class="list__arrow w-xs-12 h-xs-10 ml10" :class="{ 'active': isDeliveryCityVisible }" icon-id="downArrow" />
     </div>
