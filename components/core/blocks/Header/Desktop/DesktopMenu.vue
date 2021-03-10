@@ -35,7 +35,7 @@
         </div>
          <!-- Brands -->
         <div @mouseleave="hideMenu()" v-if="(selectedCategory === categoryitems.brands.brand.link.title && isHovering)" >
-            <Brands  :categoryitems="categoryitems.brands.brand"/> 
+            <Brands  :data="categoryitems.brands.brand" /> 
         </div>
         <!-- Sharaf Experiences -->
          <div @mouseleave="hideMenu()" v-if="(selectedCategory === categoryitems.sharafExperiences.link.title && isHovering)" >
@@ -50,7 +50,7 @@
 import DeliveryCity from '../Shared/DeliveryCity'
 import ShopAllCategories from "./ShopAllCategories"
 import SharafExperiences from '../Shared/SharafExperiences'
-import Brands from '../Shared/Brands'
+import Brands from '../Shared/Brands/index'
 import Icon from 'theme/components/custom/Global/Icon'
 
 export default {

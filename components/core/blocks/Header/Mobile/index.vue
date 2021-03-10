@@ -22,7 +22,11 @@
                 <span v-if="currentUser" class="uppercase">{{currentUser.firstname}}</span>
             </div>
             <div class="menulinks_container">
-                    <MobileMenu :shopallcategories="menuitems.categories.category" />
+                    <MobileMenu 
+                    :shopallcategories="menuitems.categories.category" 
+                    :brands="menuitems.brands.brand"
+                    :openSidebarMenu="openSidebarMenu"
+                    />
                 <div class="myaccountlinks_wrapper px-xs-20 py-xs-10 bg-cl-white" v-if="currentUser">
                     <MyAccountLinks @click="closeSidebarMenu"/>
                 </div>
@@ -30,7 +34,7 @@
                     <MenuLinks />
                 </div>
             </div>
-            <div class="logout_country_container bg-cl-white  brdr-top-1 brdr-cl-secondary">
+            <div class="logout_country_container bg-cl-white brdr-top-1 brdr-cl-secondary">
                 <div class="d-xs-flex justify-space-around w-100 align-item-center">
                     <div class=" p-xs-20">
                         <lang-icon class="icon d-xs-flex pointer " />

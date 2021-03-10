@@ -71,11 +71,11 @@
           <div class="t-cell">OR LOG IN WITH</div>
           <div class="t-cell"><div>&nbsp;</div></div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <a class="fb-ic mr-3" role="button"><mdb-icon fab icon="facebook-f" size="lg" /></a>
           <a class="tw-ic mr-3" role="button"><mdb-icon fab icon="twitter" size="lg" /></a>
           <a class="gplus-ic mr-3" role="button"><mdb-icon fab icon="google-plus-g" size="lg" /></a>
-        </div>      
+        </div>       -->
         <button-full 
          class="button-outline create-account full-button brdr-none w-100 px40"
          @click.prevent="switchElem"

@@ -14,6 +14,12 @@
 import HamburgerIcon from '@vue-storefront/core/compatibility/components/blocks/Header/HamburgerIcon'
 
 export default {
-  mixins: [HamburgerIcon]
+  mixins: [HamburgerIcon],
+    props: {
+      menuitems: {
+      type: Array,
+      required: true
+      }
+  },
 }
 </script>

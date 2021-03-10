@@ -164,7 +164,7 @@ $font-size-responsive: (14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34);
 // flex order
 $order-lists: (0, 1, 2, 3, 4, 5);
 @each $breakpoints, $value in $breakpoints {
-  @if ($value == $screen-xs) {
+  @if ($value == $media-xs) {
     @each $order-list in $order-lists {
       .order-#{$order-list} {
         order: $order-list;

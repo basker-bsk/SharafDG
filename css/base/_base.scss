@@ -123,7 +123,7 @@ ul {
   fill:color(white)
 }
 .icon.primary{
-  fill:color(sdg-primary)
+  fill:color(sdg-blue)
 }
 // Link Arrow
 .subnav-container{
@@ -135,4 +135,17 @@ ul {
 //menu transition
 .transition-300-ease-in-out {
   transition: all .3s ease-in-out;
+}
+
+
+// Mobile Navigation Styles
+.submenu-container{
+  left: -100%;
+  transition-duration: .25s;
+}
+.active{
+  .submenu-container{
+      left: 0;
+      transition-duration: .25s;
+  }
 }
