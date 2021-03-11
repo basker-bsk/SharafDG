@@ -159,37 +159,43 @@ export default {
                   "httpStatusCode": 0,
                   "url": "/en/category/beauty",
                   "id": "beauty-see-all",
-                  "name": "See All"
+                  "name": "See All",
+                  "parent_id":"beauty",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/beauty?newArrival=true",
                   "id": "beauty|newArrival",
-                  "name": "New Arrivals"
+                  "name": "New Arrivals",
+                  "parent_id":"beauty",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/beauty?giftAndValueSet=true",
                   "id": "beauty|giftAndValueSet",
-                  "name": "Gifts & Values Sets"
+                  "name": "Gifts & Values Sets",
+                  "parent_id":"beauty",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/beauty?travelExclusive=true",
                   "id": "beauty|travelExclusive",
-                  "name": "Travel Exclusives"
+                  "name": "Travel Exclusives",
+                  "parent_id":"beauty",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/beauty?promo=true",
                   "id": "beauty|promo",
-                  "name": "Sale"
+                  "name": "Sale",
+                  "parent_id":"beauty",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/beauty/make-up",
                   "id": "make-up",
                   "name": "MakeUp",
+                  "parent_id":"beauty",
                   "subcategories": [
                     {
                       "httpStatusCode": 0,
@@ -234,6 +240,7 @@ export default {
                   "url": "/en/category/beauty/skincare",
                   "id": "skincare",
                   "name": "Skin Care",
+                  "parent_id":"beauty",
                   "subcategories": [
                     {
                       "httpStatusCode": 0,
@@ -302,6 +309,7 @@ export default {
                   "url": "/en/category/beauty/fragrances",
                   "id": "fragrances",
                   "name": "Fragrance",
+                  "parent_id":"beauty",
                   "subcategories": [
                     {
                       "httpStatusCode": 0,
@@ -346,6 +354,7 @@ export default {
                   "url": "/en/category/beauty/haircare",
                   "id": "haircare",
                   "name": "Hair Care",
+                  "parent_id":"beauty",
                   "subcategories": [
                     {
                       "httpStatusCode": 0,
@@ -402,6 +411,7 @@ export default {
                   "url": "/en/category/beauty/bath-and-body",
                   "id": "bath-and-body",
                   "name": "Bath & Body",
+                  "parent_id":"beauty",
                   "subcategories": [
                     {
                       "httpStatusCode": 0,
@@ -530,6 +540,7 @@ export default {
                   "url": "/en/category/beauty/luxe-beauty",
                   "id": "luxe-beauty",
                   "name": "Luxe Beauty",
+                  "parent_id":"beauty",
                   "subcategories": [
                     {
                       "httpStatusCode": 0,
@@ -619,25 +630,29 @@ export default {
                   "httpStatusCode": 0,
                   "url": "/en/category/electronics",
                   "id": "electronics-see-all",
-                  "name": "See All"
+                  "name": "See All",
+                  "parent_id":"electronics",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/electronics?newArrival=true",
                   "id": "electronics|newArrival",
-                  "name": "New Arrivals"
+                  "name": "New Arrivals",
+                  "parent_id":"electronics",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/electronics",
                   "id": "electronics-best-sellers",
-                  "name": "Best Sellers"
+                  "name": "Best Sellers",
+                  "parent_id":"electronics",
                 },
                 {
                   "httpStatusCode": 0,
                   "url": "/en/category/electronics?promo=true",
                   "id": "electronics|promo",
-                  "name": "Sale"
+                  "name": "Sale",
+                  "parent_id":"electronics",
                 },
                 {
                   "httpStatusCode": 0,
@@ -649,31 +664,36 @@ export default {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/audio/audio-earphones",
                       "id": "audio-earphones",
-                      "name": "Earphones"
+                      "name": "Earphones",
+                      "parent_id":"audio",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/audio/audio-wired-headphones",
                       "id": "audio-wired-headphones",
-                      "name": "Wired Headphones"
+                      "name": "Wired Headphones",
+                      "parent_id":"audio",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/audio/audio-wireless-headphones",
                       "id": "audio-wireless-headphones",
-                      "name": "Wireless Headphones"
+                      "name": "Wireless Headphones",
+                      "parent_id":"audio",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/audio/audio-speakers",
                       "id": "audio-speakers",
-                      "name": "Speakers"
+                      "name": "Speakers",
+                      "parent_id":"audio",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/audio/audio-mp3-players",
                       "id": "audio-mp3-players",
-                      "name": "MP3 Players"
+                      "name": "MP3 Players",
+                      "parent_id":"audio",
                     }
                   ]
                 },
@@ -687,226 +707,54 @@ export default {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/laptop-and-pc/laptop-and-pc-notebooks",
                       "id": "laptop-and-pc-notebooks",
-                      "name": "Notebooks"
+                      "name": "Notebooks",
+                      "parent_id":"laptop-and-pc",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/laptop-and-pc/laptop-and-pc-computers",
                       "id": "laptop-and-pc-computers",
-                      "name": "Computers"
+                      "name": "Computers",
+                      "parent_id":"laptop-and-pc",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/laptop-and-pc/laptop-and-pc-presenters",
                       "id": "laptop-and-pc-presenters",
-                      "name": "Presenters"
+                      "name": "Presenters",
+                      "parent_id":"laptop-and-pc",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/laptop-and-pc/laptop-and-pc-voice-recorders",
                       "id": "laptop-and-pc-voice-recorders",
-                      "name": "Voice Recorders"
+                      "name": "Voice Recorders",
+                      "parent_id":"laptop-and-pc",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/laptop-and-pc/laptop-and-pc-mouse-and-keyboards",
                       "id": "laptop-and-pc-mouse-and-keyboards",
-                      "name": "Mouse & Keyboards"
+                      "name": "Mouse & Keyboards",
+                      "parent_id":"laptop-and-pc",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/laptop-and-pc/laptop-and-pc-accessories",
                       "id": "laptop-and-pc-accessories",
-                      "name": "Accessories"
+                      "name": "Accessories",
+                      "parent_id":"laptop-and-pc",
                     },
                     {
                       "httpStatusCode": 0,
                       "url": "/en/category/electronics/laptop-and-pc/laptop-and-pc-smart-tv-players",
                       "id": "laptop-and-pc-smart-tv-players",
-                      "name": "Smart TV Players"
+                      "name": "Smart TV Players",
+                      "parent_id":"laptop-and-pc",
                     }
                   ]
                 },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/electronics/camera-and-video",
-                  "id": "camera-and-video",
-                  "name": "Camera & Video",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/camera-and-video/camera-and-video-compact-digital-camera",
-                      "id": "camera-and-video-compact-digital-camera",
-                      "name": "Compact Digital Camera"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/camera-and-video/camera-and-video-interchangeable-lens-camera",
-                      "id": "camera-and-video-interchangeable-lens-camera",
-                      "name": "Interchangeable Lens Camera"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/camera-and-video/camera-and-video-binoculars",
-                      "id": "camera-and-video-binoculars",
-                      "name": "Binoculars"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/camera-and-video/camera-and-video-instant-camera",
-                      "id": "camera-and-video-instant-camera",
-                      "name": "Instant Camera"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/camera-and-video/camera-and-video-action-camera",
-                      "id": "camera-and-video-action-camera",
-                      "name": "Action Camera"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/camera-and-video/camera-and-video-drones",
-                      "id": "camera-and-video-drones",
-                      "name": "Drones"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/camera-and-video/camera-and-video-video-camera-and-camcorder",
-                      "id": "camera-and-video-video-camera-and-camcorder",
-                      "name": "Video Camera & Camcorder"
-                    }
-                  ]
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/electronics/mobile-and-smart-devices",
-                  "id": "mobile-and-smart-devices",
-                  "name": "Mobile & Smart Devices",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/mobile-and-smart-devices/mobile-and-smart-devices-mobile-phones",
-                      "id": "mobile-and-smart-devices-mobile-phones",
-                      "name": "Mobile phones"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/mobile-and-smart-devices/mobile-and-smart-devices-tablets",
-                      "id": "mobile-and-smart-devices-tablets",
-                      "name": "Tablets"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/mobile-and-smart-devices/mobile-and-smart-devices-wearables",
-                      "id": "mobile-and-smart-devices-wearables",
-                      "name": "Wearables"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/mobile-and-smart-devices/mobile-and-smart-devices-accessories-and-cases",
-                      "id": "mobile-and-smart-devices-accessories-and-cases",
-                      "name": "Accessories & Cases"
-                    }
-                  ]
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/electronics/electronics-personal-care",
-                  "id": "electronics-personal-care",
-                  "name": "Personal Care",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/electronics-personal-care/electronics-personal-care-beauty-devices",
-                      "id": "electronics-personal-care-beauty-devices",
-                      "name": "Beauty Devices"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/electronics-personal-care/electronics-personal-care-oral-care",
-                      "id": "electronics-personal-care-oral-care",
-                      "name": "Oral Care"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/electronics-personal-care/electronics-personal-care-grooming-devices",
-                      "id": "electronics-personal-care-grooming-devices",
-                      "name": "Grooming Devices"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/electronics-personal-care/electronics-personal-care-hair-tools",
-                      "id": "electronics-personal-care-hair-tools",
-                      "name": "Hair Tools"
-                    }
-                  ]
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/electronics/gaming-and-toys",
-                  "id": "gaming-and-toys",
-                  "name": "Gaming & Toys",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/gaming-and-toys/gaming-and-toys-gaming-game-accessories",
-                      "id": "gaming-and-toys-gaming-game-accessories",
-                      "name": "Game Accessories"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/gaming-and-toys/gaming-and-toys-gaming-consoles",
-                      "id": "gaming-and-toys-gaming-consoles",
-                      "name": "Gaming Consoles"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/gaming-and-toys/gaming-and-toys-gaming-experimental-toys",
-                      "id": "gaming-and-toys-gaming-experimental-toys",
-                      "name": "Experimental Toys"
-                    }
-                  ]
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/electronics/household",
-                  "id": "household",
-                  "name": "Household",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/household/household-home-electronics",
-                      "id": "household-home-electronics",
-                      "name": "Home Electronics"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/household/household-kitchen-accessories",
-                      "id": "household-kitchen-accessories",
-                      "name": "Kitchen Accessories"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/household/household-kitchen-electronics",
-                      "id": "household-kitchen-electronics",
-                      "name": "Kitchen Electronics"
-                    }
-                  ]
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/electronics/health-care",
-                  "id": "health-care",
-                  "name": "Health Care",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/electronics/health-care/health-care-health-gadgets",
-                      "id": "health-care-health-gadgets",
-                      "name": "Health Gadgets"
-                    }
-                  ]
-                }
+
               ]
             },
             {
@@ -914,104 +762,7 @@ export default {
               "url": "/en/category/services",
               "id": "services",
               "name": "Services",
-              "subcategories": [
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/services/connectivity",
-                  "id": "connectivity",
-                  "name": "Connectivity",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/connectivity/prepaid-sim-cards",
-                      "id": "prepaid-sim-cards",
-                      "name": "Prepaid Sim Cards"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/connectivity/portable-wifi-routers",
-                      "id": "portable-wifi-routers",
-                      "name": "Portable Wifi Routers"
-                    }
-                  ]
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/services/attractions-and-entertainment",
-                  "id": "attractions-and-entertainment",
-                  "name": "Attractions & Entertainment",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/attractions-and-entertainment/attraction-tickets",
-                      "id": "attraction-tickets",
-                      "name": "Attraction Tickets"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/attractions-and-entertainment/entertaintment-and-activities",
-                      "id": "entertaintment-and-activities",
-                      "name": "Entertaintment & Activities"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/attractions-and-entertainment/day-tours",
-                      "id": "day-tours",
-                      "name": "Day Tours"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/attractions-and-entertainment/entertainment-and-activities",
-                      "id": "entertainment-and-activities",
-                      "name": "Entertainment & Activities"
-                    }
-                  ]
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/services/reservations",
-                  "id": "reservations",
-                  "name": "Reservations"
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/services/forex-and-insurance",
-                  "id": "forex-and-insurance",
-                  "name": "Forex & Insurance"
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/services/flight-addons",
-                  "id": "flight-addons",
-                  "name": "Flight Add-Ons"
-                },
-                {
-                  "httpStatusCode": 0,
-                  "url": "/en/category/services/attractions-and-entertainment%20test",
-                  "id": "attractions-and-entertainment test",
-                  "name": "Attractions & Entertainment test",
-                  "subcategories": [
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/attractions-and-entertainment%20test/attraction-tickets",
-                      "id": "attraction-tickets",
-                      "name": "Attraction Tickets"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/attractions-and-entertainment%20test/entertainment-and-activities",
-                      "id": "entertainment-and-activities",
-                      "name": "Entertainment & Activities"
-                    },
-                    {
-                      "httpStatusCode": 0,
-                      "url": "/en/category/services/attractions-and-entertainment%20test/day-tours",
-                      "id": "day-tours",
-                      "name": "Day Tours"
-                    }
-                  ]
-                }
-              ]
+         
             },
  
           ],
