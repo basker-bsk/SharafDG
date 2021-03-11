@@ -22,7 +22,7 @@
                     href="#" @click.prevent="closeMenu">Sign In</a>
                     <span v-if="currentUser" class="uppercase">{{currentUser.firstname}}</span>
                 </div>
-                <div class="menulinks_container">
+                <div class="menulinks_container font-bold">
                         <MobileMenu 
                         :shopallcategories="menuitems.categories.category" 
                         :brands="menuitems.brands.brand"

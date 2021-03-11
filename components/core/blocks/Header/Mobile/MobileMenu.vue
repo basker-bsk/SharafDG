@@ -23,13 +23,13 @@
             <ShopAllCategoriesMobile
                 v-on:resetSelected="resetSelected"
                 :data="shopallcategories.categoryItems"
+                :title="shopallcategories.link.title"
             />
         </div>
        
         <div v-if="(selectedCategory === brandsTitle)"
         class="bg-cl-white z-xs-1 absolute h-100 w-100 top-0 left-0" >
             <BrandsMobile  
-                v-if="(selectedCategory===brandsTitle)"
                 v-on:resetSelected="resetSelected"
                 :data="brands"
             />
