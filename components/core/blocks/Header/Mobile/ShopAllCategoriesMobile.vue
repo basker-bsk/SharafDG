@@ -1,5 +1,5 @@
 <template>
-<div class="submenu-container  z-xs-10 bg-cl-white absolute h-100 w-100 top-0">
+<div class="submenu-container">
      <div class="d-xs-flex flex-xs-column" >
         <div class="px-xs-20 py-xs-20 d-xs-flex  bg-cl-primary align-item-center" 
         @click="$emit('resetSelected')">
@@ -16,8 +16,10 @@
         </ul>
     </div>
 </div>
+ </transition>
 </template>
 <script>
+
 import Icon from 'theme/components/custom/Global/Icon'
 export default {
     name:"ShopAllCategoriesMobile",

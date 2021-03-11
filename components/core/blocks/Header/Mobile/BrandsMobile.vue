@@ -1,5 +1,5 @@
 <template>
-    <div class="submenu-container z-xs-1 bg-cl-white absolute h-100 w-100 top-0">
+    <div class="submenu-container">
         <div class="d-xs-flex flex-xs-column ">
         <div class="d-xs-flex  px-xs-15 py-xs-20 brdr-bottom-1 brdr-cl-secondary" @click="$emit('resetSelected')">
         <router-link :to="localizedRoute('/')" class="font-bold d-xs-flex align-item-center">

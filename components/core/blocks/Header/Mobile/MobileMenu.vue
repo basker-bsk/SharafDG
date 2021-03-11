@@ -16,20 +16,25 @@
                 class="list__arrow white w-xs-12 h-xs-10" icon-id="RightArrow" />
             </li>            
         </ul>
-        <div :class="{'active':openMenu && selectedCategory === categoriesTitle}" >
-            <ShopAllCategoriesMobile 
-                v-if="(selectedCategory === categoriesTitle)"
+
+        <transition name="slide-left">
+        <div v-if="(selectedCategory === categoriesTitle)"
+        class="bg-cl-white z-xs-1 absolute h-100 w-100 top-0 left-0" >
+            <ShopAllCategoriesMobile
                 v-on:resetSelected="resetSelected"
                 :data="shopallcategories.categoryItems"
             />
         </div>
-        <div :class="{'active':openMenu && selectedCategory === brandsTitle}" >
+       
+        <div v-if="(selectedCategory === brandsTitle)"
+        class="bg-cl-white z-xs-1 absolute h-100 w-100 top-0 left-0" >
             <BrandsMobile  
                 v-if="(selectedCategory===brandsTitle)"
                 v-on:resetSelected="resetSelected"
                 :data="brands"
             />
         </div>
+         </transition>
     </div>
 </template>
 <script>
@@ -59,9 +64,7 @@ export default {
         brands:{
             type:Object,
             required: true
-        },
-        openSidebarMenu:Boolean,
-        
+        },        
     },
      methods: {
         setSelectedCategory (value){
@@ -77,25 +80,27 @@ export default {
     },
 }
 </script>
-<style scoped lang="scss">
+<style lang="scss">
+@import "~theme/css/animations/transitions";
 @import '~theme/css/variables/variables';
 @import '~theme/css/helpers/functions/color';
 .menulinks_wrapper{
- 
-    a{
-        color: color(white);
-    }
     .level-1{
         > li{
             border-bottom: 1px solid rgba(255, 255, 255, .3);                
         }                       
     }
-    .level-1.active{
-        .level-2{
-            left: 0;
-            transition-duration: .25s;  
-        }
-    } 
+
 }
 
+.slide-left-enter-active,
+.slide-left-leave-active{
+  transition: transform .25s;
+  left:0;
+}
+
+.slide-left-enter,
+.slide-left-leave-to {
+  transform: translateX(-100%);
+}
 </style>
