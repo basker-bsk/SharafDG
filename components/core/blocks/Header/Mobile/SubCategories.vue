@@ -13,7 +13,7 @@
                     v-for="(submenu,subindex) in subcategories" :key="subindex"> 
                     <div class="d-xs-flex d-xs-flex w-100 justify-space-between align-item-center"                    
                     @click="expandSubmenu(subindex)">                   
-                        <router-link v-if="!submenu.subcategories" :to="localizedRoute('/')" :title="$t(submenu.name)" 
+                        <router-link v-if="!submenu.subcategories" :to="localizedRoute(submenu.url)" :title="$t(submenu.name)" 
                         class="link-dark">{{submenu.name}}</router-link>
                         <span v-if="submenu.subcategories">{{submenu.name}}</span>
                         <Icon v-if="submenu.subcategories" class="list__arrow dark w-xs-12 h-xs-10" icon-id="RightArrow" />
