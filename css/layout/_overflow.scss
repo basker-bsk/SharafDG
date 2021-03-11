@@ -1,0 +1,35 @@
+// IMPORTANT: Add new css rules ON DEMAND only when you need them!
+// Try to use multiples of 5 when using pixels
+
+// .overflow-auto .overflow-hidden - example classes
+// Pixels
+$overflow: auto scroll hidden visible ;
+
+
+// Generators
+@mixin overflow {
+  @each $breakpoint, $value in $breakpoints {
+    // Only for mobile (XS)
+    @if ($value == $media-xs) {
+      @each $i in $overflow {
+        .overflow#{$i} {
+          overflow: #{$i};
+        }
+      }      
+    } 
+    // For [sm, md, lg]
+    @else {
+      @include mq($value) {
+        @each $i in $overflow {
+          .overflow-#{$breakpoint}-#{$i} {
+            overflow: #{$i};
+          }
+        }
+       
+      }
+    }
+  }
+  
+}
+
+@include overflow;

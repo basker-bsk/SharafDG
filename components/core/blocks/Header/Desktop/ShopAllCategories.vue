@@ -11,8 +11,7 @@
                         </li>
                         </ul>       
                     </div>
-                    <SubCategory  :category="subcategoryLists" /> 
-                    
+                    <SubCategory  :category="subcategoryLists" />                     
                     <div class="col-md-2 py-md-15 px-md-25  dropdown-right">
                         <strong>Featured Brands</strong>
                         </div>

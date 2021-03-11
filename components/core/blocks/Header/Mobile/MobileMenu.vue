@@ -20,7 +20,7 @@
         <transition name="slide-left">
         <div v-if="(selectedCategory === categoriesTitle)"
         class="bg-cl-white z-xs-1 absolute h-100 w-100 top-0 left-0" >
-            <ShopAllCategoriesMobile
+            <Categories
                 v-on:resetSelected="resetSelected"
                 :data="shopallcategories.categoryItems"
                 :title="shopallcategories.link.title"
@@ -39,13 +39,13 @@
 </template>
 <script>
 import Icon from 'theme/components/custom/Global/Icon'
-import ShopAllCategoriesMobile from './ShopAllCategoriesMobile'
+import Categories from './Categories'
 import BrandsMobile from './BrandsMobile'
 export default {
     name:"MobileMenu",
     components: {
         Icon,
-        ShopAllCategoriesMobile,
+        Categories,
         BrandsMobile,
     },
      data(){
