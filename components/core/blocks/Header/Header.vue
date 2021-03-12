@@ -3,9 +3,9 @@
     <header class="z-xs-10 w-100 header header--banner ">
       <div class="header__main header-container py-xs-10 align-item-center d-xs-flex py-md-0 bg-cl-sdg-blue ">
         <div class="container">
-        <div class="align-item-center d-xs-flex"  v-if="!isCheckoutPage || isThankYouPage">       
+        <div class="align-item-center d-xs-flex"  v-if="!isCheckoutPage || isThankYouPage">
             <div class="middle-xs d-xs-flex d-md-none">
-                <MobileMenuContainer :menuitems="menu" />                
+                <MobileMenuContainer :menuitems="menu" />
             </div>
             <div class="header__logo-wrapper d-xs-flex middle-xs">
                 <logo  alt="" width="auto" height="auto" />
@@ -15,7 +15,7 @@
                 <lang-icon class="icon cl-white d-xs-none d-md-flex pointer" />
                 <account-icon class="icon  d-xs-none d-md-flex pointer" />
                 <microcart-icon class="icon pointer middle-xs" />
-            </div>          
+            </div>
           <div class="row between-xs middle-xs px15 py5 " v-if="isCheckoutPage && !isThankYouPage">
             <div class="col-xs-5 col-md-3 middle-xs">
               <div>
@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="col-xs-2 col-md-6 center-xs">
-              <logo width="auto" height="41px" />
+              <logo width="auto" height="41" />
             </div>
             <div class="col-xs-5 col-md-3 end-xs">
               <div>
@@ -45,7 +45,7 @@
         </div>
       </div>
       </div>
-      
+
     </header>
     <DesktopMenu class="d-none d-xs-flex" :categoryitems="menu" />
   </div>
@@ -71,7 +71,7 @@ export default {
     DesktopMenu,
     MobileMenuContainer,
     LangIcon,
-    Search,
+    Search
   },
   mixins: [CurrentPage],
   data () {
@@ -81,12 +81,12 @@ export default {
       scrollTop: 0,
       lastScrollTop: 0,
       navbarHeight: 54,
-      isHovering: false,      
-      isFixedHeader: false,      
+      isHovering: false,
+      isFixedHeader: false,
       menu: {
       "categories": {
         "category": {
-          "categoryItems": [      
+          "categoryItems": [
             {
               "httpStatusCode": 0,
               "url": "/en/category/beauty",
@@ -762,13 +762,13 @@ export default {
               "url": "/en/category/services",
               "id": "services",
               "name": "Services",
-         
+
             },
- 
+
           ],
           "link": {
             "emptyMenu": false,
-            "title": "Shop All Products12"
+            "title": "Shop All Products1234"
           },
           ":type": "ishop/components/content/category"
         }
@@ -957,7 +957,7 @@ export default {
               "openNewTab": "",
               "brandLogo": "https://dummyimage.com/70x50/aaa/222&text=image4"
             },
-          
+
           ],
           "brandList": [
             {
@@ -1064,8 +1064,8 @@ export default {
               ],
               "code": "T"
             },
-      
-          
+
+
           ],
           "link": {
             "emptyMenu": false,
@@ -1085,10 +1085,10 @@ export default {
           {
             "image":"https://img.scaleflex.com/truck.jpg",
             "title":"Questions1",
-            "description":"You can start typing on the left-hand text area and then click on the button.",
+            "description":"You can start typing on the left-hand",
           },
            {
-            "image":"https://img.scaleflex.com/sea-world.jpg",
+            "image":"https://img.scaleflex.com/truck.jpg",
             "title":"Techbench2",
             "description":"Let us set up your device.",
           },
@@ -1103,7 +1103,7 @@ export default {
             "description":"You can start typing on the left-hand text area and then click on the button.",
           },
            {
-            "image":"https://img.scaleflex.com/sea-world.jpg",
+            "image":"https://img.scaleflex.com/truck.jpg",
             "title":"Techbench5",
             "description":"Let us set up your device.",
           },
@@ -1113,15 +1113,14 @@ export default {
             "description":"You can start typing on the left-hand text area and then click on the button.",
           },
            {
-            "image":"https://img.scaleflex.com/sea-world.jpg",
+            "image":"https://img.scaleflex.com/truck.jpg",
             "title":"Techbench2",
             "description":"Let us set up your device.",
           },
-    
+
         ],
       },
-    },
-            
+      }
     }
   },
 
@@ -1130,8 +1129,7 @@ export default {
       return this.$store.state.checkout.isThankYouPage
         ? this.$store.state.checkout.isThankYouPage
         : false
-    },      
-
+    }
   },
    updated () {
     this.autoHideHeader();
@@ -1155,8 +1153,8 @@ export default {
       }
     });
   },
-  methods: { 
-  
+  methods: {
+
     gotoAccount () {
       this.$bus.$emit('modal-toggle', 'modal-signup')
     },
@@ -1172,9 +1170,8 @@ export default {
           HeaderElem.add('fixed');
         } else {
           HeaderElem.remove('fixed');
-        }      
+        }
      },
-
   }
 }
 </script>
@@ -1187,13 +1184,13 @@ $color-icon-hover: color(secondary, $colors-background);
 
 header {
   height: auto;
-  top: 0px; 
+  top: 0px;
   transition: top 0.2s ease-in-out;
   &.is-visible {
     top: 0;
   }
-  @include font-face('Nunito Sans', 12px, normal, null); 
-  
+  @include font-face('Nunito Sans', 12px, normal, null);
+
 }
 .search_icon{
     fill: color(black);
@@ -1239,11 +1236,11 @@ header {
 }
 .header-container{
   .material-icons, button{
-    color: color(white);   
+    color: color(white);
   }
   .icon{
     opacity: 1;
-  }  
+  }
   .icon:hover, .icon:focus{
     background-color: color(transparent);
   }
@@ -1280,7 +1277,7 @@ header {
   .header__right-wrapper{
     flex-basis: 30%;
   }
-}   
+}
 @include media(lg-up){
   .header__search-wrapper{
     flex-basis: 58%;
@@ -1288,6 +1285,5 @@ header {
   .header__right-wrapper{
     flex-basis: 22%;
   }
-}  
-
+}
 </style>
